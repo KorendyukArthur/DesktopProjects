@@ -1,0 +1,200 @@
+body { background-image: url( ../img/copyspace.jpg );
+    background-attachment: fixed
+}
+
+
+main .features{
+    float: right;
+    color: #fff;
+    margin-top: 100px;
+    text-align: center;
+    width: 100%;
+}
+
+main .features h1 {font-size: 50px;}
+main .features p {max-width: 700px; margin: auto}
+
+
+.alert-warning{
+    float: top;
+    clear: both;
+    width: 400px;
+    margin: 20px 34%;
+    text-align: left;
+}
+
+form {
+    margin-left: 10%;
+    width: 500px;
+    margin-top: 0px;
+}
+
+
+
+/*
+#navbar ul {
+  display: none;
+  background-color: #f90;
+  position: absolute;
+  top: 100%;
+}
+#navbar li:hover ul { display: block; }
+#navbar, #navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#navbar {
+  height: 30px;
+  padding-left: 350px;
+  min-width: 660px;
+  overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+*/
+
+#navbar li {
+  float: top;
+  position: relative;
+  height: 100%;
+}
+#navbar li a {
+  display: block;
+  padding: 6px;
+  width: 100px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+}
+#navbar ul li { float: none; }
+#navbar li:hover { background-color: #f90; }
+#navbar ul li:hover { background-color: #666; }
+
+
+
+
+
+/*
+код для тестовой страницы
+*/
+
+.menu-bar {
+  border-radius: 25px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  padding: 0 50px;
+  margin: 20px 30 30 30;
+  justify-content: space-evenly
+}
+.menu-bar li {
+  list-style: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 12px 16px;
+  margin: 0 8px;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.menu-bar li::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 10;
+  right: 10;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: 0.8s;
+  border-radius: 20px;
+}
+.menu-bar li:hover {
+  color: black;
+}
+.menu-bar li:hover::before {
+  background: linear-gradient(to bottom, #e8edec, #d2d1d3);
+  box-shadow: 0px 3px 20px 0px black;
+  transform: scale(1.2);
+  text-decoration: none;
+}
+
+
+
+
+
+/* Стили для разделения картинок колонны*/
+.column {
+    margin: top;
+    float: top;
+    width: 50%;
+    color: white;
+    transition: 1s;
+}
+.column:hover {
+    transform: scale(1.2);
+
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column1 {
+     margin: top;
+    float: top;
+    width: 33%;
+    color: white;
+    transition: 1s;
+}
+
+.column1:hover {
+    transform: scale(1.2);
+
+}
+
+
+
+
+
+
+
+/* Стили для панели навков*/
+/* Make sure that padding behaves as expected */
+* {box-sizing:border-box}
+
+/* Container for skill bars */
+.container {
+    width: 100%; /* Full width */
+    background-color: #fff; /* Grey background */
+}
+
+.skills {
+    text-align: right; /* Right-align text */
+    padding-right: 20px; /* Add some right padding */
+    line-height: 40px; /* Set the line-height to center the text inside the skill bar, and to expand the height of the container */
+    color: white; /* White text color */
+}
+
+.html {width: 90%; background-color: #4CAF50;} /* Green */
+.css {width: 80%; background-color: #2196F3;} /* Blue */
+.js {width: 65%; background-color: #f44336;} /* Red */
+.php {width: 60%; background-color: #808080;} /* Dark Grey */
+
+.color-text{
+    color: white;
+
+    text-align: center;
+    padding: 20px 10px 15px 200px;
+}

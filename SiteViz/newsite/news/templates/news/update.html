@@ -1,0 +1,25 @@
+{% extends 'main/layout.html'  %}
+
+{% block title %}
+Форма для добавления статей
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Форма для добавления статьи</h1>
+        {# для создания формы тег form #}
+        {# первый атребут метод передачи данных, второй страница на которой будут обрабатываться данные из формы #}
+        {# action="/news/check" #}
+        <form method="post">
+        {# коментарий для запуска передачи данных #}
+            {% csrf_token %}
+
+            {{ form.title }}<br>
+            {{ form.anons }}<br>
+            {{ form.full_text }}<br>
+            {{ form.date }}<br>
+            <span> {{error}} </span>
+            <button class="btn btn-success" type="submit">Добавить статью</button>
+        </form>
+    </div>
+{% endblock %}

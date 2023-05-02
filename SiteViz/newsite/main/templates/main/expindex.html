@@ -1,0 +1,51 @@
+{% extends 'main/layout.html'  %}
+
+{% block title %}
+<h1> {{title}}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ title }}</h1>
+        <p>
+            Информация о странице
+        </p>
+        <button
+             class="btn btn-warning"> На страницу про нас
+        </button>
+        <!Создание перебора элементов >
+        {% for el in values %}
+        <! Вывод элментов >
+        <p>{{ el }}</p>
+        <! закрытие цыкла>
+        {% endfor %}
+
+        <! вывод из функции index значения из словаря data по ключу obj >
+        {{obj}}
+        <! вывод из функции index значения из словаря data по ключу obj который является словарем и у него мы выводим только одно значение >
+        {{ obj.model }}
+
+        <!создание перебора>
+        {% for el in obj %}
+        <! вывод элемента >
+            <p>{{el|upper}}</p>
+        {% endfor %}
+
+
+        <!создание перебора>
+        {% for el in values %}
+            {% if el == 'Hellow' %}
+                {% filter upper %}
+                <p>{{el}}</p>
+                {% endfilter %}
+            {% endif %}
+        <! вывод элемента >
+            <p>{{el}}</p>
+        {% endfor %}
+
+    </div>
+
+
+
+
+{% endblock %}
