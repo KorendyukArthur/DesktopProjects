@@ -1,0 +1,536 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{37674BE9-7B6F-4F55-A31F-B42CB469DDA5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>WindowsApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>ProfInspector</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".vs\ProjectRYPK\FileContentIndex\9a56da7d-af2b-4151-8209-98d6ee0ad566.vsidx" />
+    <None Include=".vs\ProjectRYPK\FileContentIndex\ca9fdd97-187c-4416-abf1-403834a3a725.vsidx" />
+    <None Include=".vs\ProjectRYPK\FileContentIndex\da132000-bea5-4365-abea-3af532bb6008.vsidx" />
+    <None Include=".vs\ProjectRYPK\FileContentIndex\ec1bc425-75eb-4c3d-aa21-d95fedda2ca9.vsidx" />
+    <None Include=".vs\ProjectRYPK\FileContentIndex\read.lock" />
+    <None Include=".vs\ProjectRYPK\v17\.suo" />
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="packages\EntityFramework.6.4.4\.signature.p7s" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\netcoreapp3.0\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\netcoreapp3.0\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\build\EntityFramework.DefaultItems.props" />
+    <None Include="packages\EntityFramework.6.4.4\build\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\build\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\App.config.install.xdt" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\App.config.transform" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\Web.config.install.xdt" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\Web.config.transform" />
+    <None Include="packages\EntityFramework.6.4.4\EntityFramework.6.4.4.nupkg" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.PS2.psd1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.PS2.psm1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.psd1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.psm1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\init.ps1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\install.ps1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\netcoreapp3.0\any\ef6.runtimeconfig.json" />
+    <None Include="packages\Google.Protobuf.3.22.0\.signature.p7s" />
+    <None Include="packages\Google.Protobuf.3.22.0\Google.Protobuf.3.22.0.nupkg" />
+    <None Include="packages\K4os.Compression.LZ4.1.3.5\.signature.p7s" />
+    <None Include="packages\K4os.Compression.LZ4.1.3.5\K4os.Compression.LZ4.1.3.5.nupkg" />
+    <None Include="packages\K4os.Compression.LZ4.Legacy.1.3.5\.signature.p7s" />
+    <None Include="packages\K4os.Compression.LZ4.Legacy.1.3.5\K4os.Compression.LZ4.Legacy.1.3.5.nupkg" />
+    <None Include="packages\K4os.Compression.LZ4.Streams.1.3.5\.signature.p7s" />
+    <None Include="packages\K4os.Compression.LZ4.Streams.1.3.5\K4os.Compression.LZ4.Streams.1.3.5.nupkg" />
+    <None Include="packages\K4os.Hash.xxHash.1.0.8\.signature.p7s" />
+    <None Include="packages\K4os.Hash.xxHash.1.0.8\K4os.Hash.xxHash.1.0.8.nupkg" />
+    <None Include="packages\Microsoft.Office.Excel.14.0.4760.1000\.signature.p7s" />
+    <None Include="packages\Microsoft.Office.Excel.14.0.4760.1000\Microsoft.Office.Excel.14.0.4760.1000.nupkg" />
+    <None Include="packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\.signature.p7s" />
+    <None Include="packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\Microsoft.Office.Interop.Excel.15.0.4795.1001.nupkg" />
+    <None Include="packages\MSOffice.Interop.16.0.55555\.signature.p7s" />
+    <None Include="packages\MSOffice.Interop.16.0.55555\MSOffice.Interop.16.0.55555.nupkg" />
+    <None Include="packages\Portable.BouncyCastle-GOST2012.1.8.6.11\.signature.p7s" />
+    <None Include="packages\Portable.BouncyCastle-GOST2012.1.8.6.11\Portable.BouncyCastle-GOST2012.1.8.6.11.nupkg" />
+    <None Include="packages\System.Buffers.4.5.1\.signature.p7s" />
+    <None Include="packages\System.Buffers.4.5.1\lib\netcoreapp2.0\_._" />
+    <None Include="packages\System.Buffers.4.5.1\lib\uap10.0.16299\_._" />
+    <None Include="packages\System.Buffers.4.5.1\ref\netcoreapp2.0\_._" />
+    <None Include="packages\System.Buffers.4.5.1\ref\uap10.0.16299\_._" />
+    <None Include="packages\System.Buffers.4.5.1\System.Buffers.4.5.1.nupkg" />
+    <None Include="packages\System.IO.Pipelines.5.0.2\.signature.p7s" />
+    <None Include="packages\System.IO.Pipelines.5.0.2\System.IO.Pipelines.5.0.2.nupkg" />
+    <None Include="packages\System.Memory.4.5.5\.signature.p7s" />
+    <None Include="packages\System.Memory.4.5.5\lib\netcoreapp2.1\_._" />
+    <None Include="packages\System.Memory.4.5.5\ref\netcoreapp2.1\_._" />
+    <None Include="packages\System.Memory.4.5.5\System.Memory.4.5.5.nupkg" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\.signature.p7s" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\MonoAndroid10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\MonoTouch10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\netcoreapp2.0\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\uap10.0.16299\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarinios10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarinmac20\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarintvos10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarinwatchos10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\MonoAndroid10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\MonoTouch10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\netcoreapp2.0\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\uap10.0.16299\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarinios10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarinmac20\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarintvos10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarinwatchos10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\System.Numerics.Vectors.4.5.0.nupkg" />
+    <None Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\.signature.p7s" />
+    <None Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\buildTransitive\netcoreapp2.0\System.Runtime.CompilerServices.Unsafe.targets" />
+    <None Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\buildTransitive\netcoreapp3.1\_._" />
+    <None Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\System.Runtime.CompilerServices.Unsafe.6.0.0.nupkg" />
+    <None Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\.signature.p7s" />
+    <None Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\MonoAndroid10\_._" />
+    <None Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\MonoTouch10\_._" />
+    <None Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\xamarinios10\_._" />
+    <None Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\xamarinmac20\_._" />
+    <None Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\xamarintvos10\_._" />
+    <None Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\xamarinwatchos10\_._" />
+    <None Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ref\MonoAndroid10\_._" />
+    <None Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ref\MonoTouch10\_._" />
+    <None Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ref\xamarinios10\_._" />
+    <None Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ref\xamarinmac20\_._" />
+    <None Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ref\xamarintvos10\_._" />
+    <None Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ref\xamarinwatchos10\_._" />
+    <None Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\System.Runtime.InteropServices.RuntimeInformation.4.3.0.nupkg" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\.signature.p7s" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\MonoAndroid10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\MonoTouch10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\netcoreapp2.1\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarinios10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarinmac20\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarintvos10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarinwatchos10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\MonoAndroid10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\MonoTouch10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\netcoreapp2.1\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarinios10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarinmac20\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarintvos10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarinwatchos10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\System.Threading.Tasks.Extensions.4.5.4.nupkg" />
+    <None Include="ProjectRYPK\App.config" />
+    <None Include="ProjectRYPK\bin\Debug\ProjectRYPK.exe.config" />
+    <None Include="ProjectRYPK\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="ProjectRYPK\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="ProjectRYPK\obj\Debug\ProjectRYPK.csproj.AssemblyReference.cache" />
+    <None Include="ProjectRYPK\obj\Debug\ProjectRYPK.csproj.CopyComplete" />
+    <None Include="ProjectRYPK\obj\Debug\ProjectRYPK.csproj.CoreCompileInputs.cache" />
+    <None Include="ProjectRYPK\obj\Debug\ProjectRYPK.csproj.GenerateResource.cache" />
+    <None Include="ProjectRYPK\obj\Debug\ProjectRYPK.csproj.SuggestedBindingRedirects.cache" />
+    <None Include="ProjectRYPK\obj\Debug\_IsIncrementalBuild" />
+    <None Include="ProjectRYPK\packages.config" />
+    <None Include="ProjectRYPK\ProjectRYPK.csproj" />
+    <None Include="ProjectRYPK\Properties\Settings.settings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages\EntityFramework.6.4.4\build\Microsoft.Data.Entity.Build.Tasks.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\Icon.png" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\about_EntityFramework6.help.txt" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\any\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\any\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\win-x86\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\win-x86\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\any\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\any\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\win-x86\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\win-x86\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\netcoreapp3.0\any\ef6.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\netcoreapp3.0\any\ef6.pdb" />
+    <Content Include="packages\Google.Protobuf.3.22.0\lib\net45\Google.Protobuf.dll" />
+    <Content Include="packages\Google.Protobuf.3.22.0\lib\net45\Google.Protobuf.pdb" />
+    <Content Include="packages\Google.Protobuf.3.22.0\lib\net45\Google.Protobuf.xml" />
+    <Content Include="packages\Google.Protobuf.3.22.0\lib\net5.0\Google.Protobuf.dll" />
+    <Content Include="packages\Google.Protobuf.3.22.0\lib\net5.0\Google.Protobuf.pdb" />
+    <Content Include="packages\Google.Protobuf.3.22.0\lib\net5.0\Google.Protobuf.xml" />
+    <Content Include="packages\Google.Protobuf.3.22.0\lib\netstandard1.1\Google.Protobuf.dll" />
+    <Content Include="packages\Google.Protobuf.3.22.0\lib\netstandard1.1\Google.Protobuf.pdb" />
+    <Content Include="packages\Google.Protobuf.3.22.0\lib\netstandard1.1\Google.Protobuf.xml" />
+    <Content Include="packages\Google.Protobuf.3.22.0\lib\netstandard2.0\Google.Protobuf.dll" />
+    <Content Include="packages\Google.Protobuf.3.22.0\lib\netstandard2.0\Google.Protobuf.pdb" />
+    <Content Include="packages\Google.Protobuf.3.22.0\lib\netstandard2.0\Google.Protobuf.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.1.3.5\lib\net5.0\K4os.Compression.LZ4.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.1.3.5\lib\net5.0\K4os.Compression.LZ4.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.1.3.5\lib\net6.0\K4os.Compression.LZ4.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.1.3.5\lib\net6.0\K4os.Compression.LZ4.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.1.3.5\lib\netstandard2.0\K4os.Compression.LZ4.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.1.3.5\lib\netstandard2.0\K4os.Compression.LZ4.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.1.3.5\lib\netstandard2.1\K4os.Compression.LZ4.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.1.3.5\lib\netstandard2.1\K4os.Compression.LZ4.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.Legacy.1.3.5\lib\net462\K4os.Compression.LZ4.Legacy.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.Legacy.1.3.5\lib\net462\K4os.Compression.LZ4.Legacy.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.Legacy.1.3.5\lib\net5.0\K4os.Compression.LZ4.Legacy.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.Legacy.1.3.5\lib\net5.0\K4os.Compression.LZ4.Legacy.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.Legacy.1.3.5\lib\netstandard2.0\K4os.Compression.LZ4.Legacy.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.Legacy.1.3.5\lib\netstandard2.0\K4os.Compression.LZ4.Legacy.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.Legacy.1.3.5\lib\netstandard2.1\K4os.Compression.LZ4.Legacy.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.Legacy.1.3.5\lib\netstandard2.1\K4os.Compression.LZ4.Legacy.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net462\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net462\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net5.0\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net5.0\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net6.0\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net6.0\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.3.5\lib\netstandard2.0\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.3.5\lib\netstandard2.0\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.3.5\lib\netstandard2.1\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.3.5\lib\netstandard2.1\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.xml" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.8\lib\net5.0\K4os.Hash.xxHash.dll" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.8\lib\net5.0\K4os.Hash.xxHash.xml" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.8\lib\net6.0\K4os.Hash.xxHash.dll" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.8\lib\net6.0\K4os.Hash.xxHash.xml" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.8\lib\netstandard2.0\K4os.Hash.xxHash.dll" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.8\lib\netstandard2.0\K4os.Hash.xxHash.xml" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.8\lib\netstandard2.1\K4os.Hash.xxHash.dll" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.8\lib\netstandard2.1\K4os.Hash.xxHash.xml" />
+    <Content Include="packages\Microsoft.Office.Excel.14.0.4760.1000\lib\net20\Office.dll" />
+    <Content Include="packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\netstandard2.0\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="packages\MSOffice.Interop.16.0.55555\lib\Microsoft.Office.Interop.Access.Dao.dll" />
+    <Content Include="packages\MSOffice.Interop.16.0.55555\lib\Microsoft.Office.Interop.Access.dll" />
+    <Content Include="packages\MSOffice.Interop.16.0.55555\lib\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="packages\MSOffice.Interop.16.0.55555\lib\Microsoft.Office.Interop.Visio.WorkflowAuthoring.dll" />
+    <Content Include="packages\Portable.BouncyCastle-GOST2012.1.8.6.11\lib\net40\BouncyCastle.NetCore.dll" />
+    <Content Include="packages\Portable.BouncyCastle-GOST2012.1.8.6.11\lib\net40\BouncyCastle.NetCore.xml" />
+    <Content Include="packages\Portable.BouncyCastle-GOST2012.1.8.6.11\lib\netstandard2.0\BouncyCastle.NetCore.dll" />
+    <Content Include="packages\Portable.BouncyCastle-GOST2012.1.8.6.11\lib\netstandard2.0\BouncyCastle.NetCore.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\net461\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\LICENSE.TXT" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\net45\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\net45\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard1.1\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard1.1\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard2.0\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard2.0\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Buffers.4.5.1\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Buffers.4.5.1\version.txt" />
+    <Content Include="packages\System.IO.Pipelines.5.0.2\Icon.png" />
+    <Content Include="packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll" />
+    <Content Include="packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.xml" />
+    <Content Include="packages\System.IO.Pipelines.5.0.2\lib\netcoreapp3.0\System.IO.Pipelines.dll" />
+    <Content Include="packages\System.IO.Pipelines.5.0.2\lib\netcoreapp3.0\System.IO.Pipelines.xml" />
+    <Content Include="packages\System.IO.Pipelines.5.0.2\lib\netstandard1.3\System.IO.Pipelines.dll" />
+    <Content Include="packages\System.IO.Pipelines.5.0.2\lib\netstandard1.3\System.IO.Pipelines.xml" />
+    <Content Include="packages\System.IO.Pipelines.5.0.2\lib\netstandard2.0\System.IO.Pipelines.dll" />
+    <Content Include="packages\System.IO.Pipelines.5.0.2\lib\netstandard2.0\System.IO.Pipelines.xml" />
+    <Content Include="packages\System.IO.Pipelines.5.0.2\LICENSE.TXT" />
+    <Content Include="packages\System.IO.Pipelines.5.0.2\ref\netcoreapp2.0\System.IO.Pipelines.dll" />
+    <Content Include="packages\System.IO.Pipelines.5.0.2\ref\netcoreapp2.0\System.IO.Pipelines.xml" />
+    <Content Include="packages\System.IO.Pipelines.5.0.2\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.IO.Pipelines.5.0.2\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.IO.Pipelines.5.0.2\version.txt" />
+    <Content Include="packages\System.Memory.4.5.5\lib\net461\System.Memory.dll" />
+    <Content Include="packages\System.Memory.4.5.5\lib\net461\System.Memory.xml" />
+    <Content Include="packages\System.Memory.4.5.5\lib\netstandard1.1\System.Memory.dll" />
+    <Content Include="packages\System.Memory.4.5.5\lib\netstandard1.1\System.Memory.xml" />
+    <Content Include="packages\System.Memory.4.5.5\lib\netstandard2.0\System.Memory.dll" />
+    <Content Include="packages\System.Memory.4.5.5\lib\netstandard2.0\System.Memory.xml" />
+    <Content Include="packages\System.Memory.4.5.5\LICENSE.TXT" />
+    <Content Include="packages\System.Memory.4.5.5\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Memory.4.5.5\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Memory.4.5.5\version.txt" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard1.0\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard1.0\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard2.0\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard2.0\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\LICENSE.TXT" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net45\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net45\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net46\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net46\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard1.0\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard1.0\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard2.0\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard2.0\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\version.txt" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\Icon.png" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net6.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net6.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\LICENSE.TXT" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.6.0.0\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\dotnet_library_license.txt" />
+    <Content Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\win8\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\wpa81\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ref\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\runtimes\aot\lib\netcore50\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\runtimes\unix\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\runtimes\win\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\runtimes\win\lib\netcore50\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\runtimes\win\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ThirdPartyNotices.txt" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\netstandard1.0\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\netstandard1.0\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\netstandard2.0\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\LICENSE.TXT" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\version.txt" />
+    <Content Include="ProjectRYPK\bin\Debug\BouncyCastle.NetCore.dll" />
+    <Content Include="ProjectRYPK\bin\Debug\BouncyCastle.NetCore.xml" />
+    <Content Include="ProjectRYPK\bin\Debug\EntityFramework.dll" />
+    <Content Include="ProjectRYPK\bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="ProjectRYPK\bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="ProjectRYPK\bin\Debug\EntityFramework.xml" />
+    <Content Include="ProjectRYPK\bin\Debug\Google.Protobuf.dll" />
+    <Content Include="ProjectRYPK\bin\Debug\Google.Protobuf.pdb" />
+    <Content Include="ProjectRYPK\bin\Debug\Google.Protobuf.xml" />
+    <Content Include="ProjectRYPK\bin\Debug\K4os.Compression.LZ4.dll" />
+    <Content Include="ProjectRYPK\bin\Debug\K4os.Compression.LZ4.Legacy.dll" />
+    <Content Include="ProjectRYPK\bin\Debug\K4os.Compression.LZ4.Legacy.xml" />
+    <Content Include="ProjectRYPK\bin\Debug\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="ProjectRYPK\bin\Debug\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="ProjectRYPK\bin\Debug\K4os.Compression.LZ4.xml" />
+    <Content Include="ProjectRYPK\bin\Debug\K4os.Hash.xxHash.dll" />
+    <Content Include="ProjectRYPK\bin\Debug\K4os.Hash.xxHash.xml" />
+    <Content Include="ProjectRYPK\bin\Debug\Microsoft.Office.Interop.Visio.WorkflowAuthoring.dll" />
+    <Content Include="ProjectRYPK\bin\Debug\ProjectRYPK.exe" />
+    <Content Include="ProjectRYPK\bin\Debug\ProjectRYPK.pdb" />
+    <Content Include="ProjectRYPK\bin\Debug\System.Buffers.dll" />
+    <Content Include="ProjectRYPK\bin\Debug\System.Buffers.xml" />
+    <Content Include="ProjectRYPK\bin\Debug\System.IO.Pipelines.dll" />
+    <Content Include="ProjectRYPK\bin\Debug\System.IO.Pipelines.xml" />
+    <Content Include="ProjectRYPK\bin\Debug\System.Memory.dll" />
+    <Content Include="ProjectRYPK\bin\Debug\System.Memory.xml" />
+    <Content Include="ProjectRYPK\bin\Debug\System.Numerics.Vectors.dll" />
+    <Content Include="ProjectRYPK\bin\Debug\System.Numerics.Vectors.xml" />
+    <Content Include="ProjectRYPK\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="ProjectRYPK\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="ProjectRYPK\bin\Debug\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="ProjectRYPK\bin\Debug\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="ProjectRYPK\obj\Debug\ProjectRYPK.csproj.FileListAbsolute.txt" />
+    <Content Include="ProjectRYPK\obj\Debug\ProjectRYPK.exe" />
+    <Content Include="ProjectRYPK\obj\Debug\ProjectRYPK.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ProjectRYPK\Agent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectRYPK\Agent.Designer.cs">
+      <DependentUpon>Agent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectRYPK\DataA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectRYPK\DataA.Designer.cs">
+      <DependentUpon>DataA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectRYPK\Kl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectRYPK\Kl.Designer.cs">
+      <DependentUpon>Kl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectRYPK\MF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectRYPK\MF.Designer.cs">
+      <DependentUpon>MF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectRYPK\MFAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectRYPK\MFAdmin.Designer.cs">
+      <DependentUpon>MFAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectRYPK\MyDbContext.cs" />
+    <Compile Include="ProjectRYPK\Nom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectRYPK\Nom.Designer.cs">
+      <DependentUpon>Nom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectRYPK\NomClass.cs" />
+    <Compile Include="ProjectRYPK\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="ProjectRYPK\OpenMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectRYPK\OpenMain.Designer.cs">
+      <DependentUpon>OpenMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectRYPK\Program.cs" />
+    <Compile Include="ProjectRYPK\Properties\AssemblyInfo.cs" />
+    <Compile Include="ProjectRYPK\Properties\Resources.Designer.cs" />
+    <Compile Include="ProjectRYPK\Properties\Settings.Designer.cs" />
+    <Compile Include="ProjectRYPK\RegBZacaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectRYPK\RegBZacaz.Designer.cs">
+      <DependentUpon>RegBZacaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectRYPK\SQLRequests.cs" />
+    <Compile Include="ProjectRYPK\V_KL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectRYPK\V_KL.Designer.cs">
+      <DependentUpon>V_KL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectRYPK\V_Nom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectRYPK\V_Nom.Designer.cs">
+      <DependentUpon>V_Nom.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectRYPK\Agent.resx">
+      <DependentUpon>Agent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectRYPK\DataA.resx">
+      <DependentUpon>DataA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectRYPK\Kl.resx">
+      <DependentUpon>Kl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectRYPK\MF.resx">
+      <DependentUpon>MF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectRYPK\MFAdmin.resx">
+      <DependentUpon>MFAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectRYPK\Nom.resx">
+      <DependentUpon>Nom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectRYPK\obj\Debug\ProjectRYPK.Agent.resources" />
+    <EmbeddedResource Include="ProjectRYPK\obj\Debug\ProjectRYPK.DataA.resources" />
+    <EmbeddedResource Include="ProjectRYPK\obj\Debug\ProjectRYPK.Kl.resources" />
+    <EmbeddedResource Include="ProjectRYPK\obj\Debug\ProjectRYPK.MF.resources" />
+    <EmbeddedResource Include="ProjectRYPK\obj\Debug\ProjectRYPK.MFAdmin.resources" />
+    <EmbeddedResource Include="ProjectRYPK\obj\Debug\ProjectRYPK.Nom.resources" />
+    <EmbeddedResource Include="ProjectRYPK\obj\Debug\ProjectRYPK.OpenMain.resources" />
+    <EmbeddedResource Include="ProjectRYPK\obj\Debug\ProjectRYPK.Properties.Resources.resources" />
+    <EmbeddedResource Include="ProjectRYPK\obj\Debug\ProjectRYPK.RegBZacaz.resources" />
+    <EmbeddedResource Include="ProjectRYPK\obj\Debug\ProjectRYPK.V_KL.resources" />
+    <EmbeddedResource Include="ProjectRYPK\obj\Debug\ProjectRYPK.V_Nom.resources" />
+    <EmbeddedResource Include="ProjectRYPK\OpenMain.resx">
+      <DependentUpon>OpenMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectRYPK\Properties\Resources.resx" />
+    <EmbeddedResource Include="ProjectRYPK\RegBZacaz.resx">
+      <DependentUpon>RegBZacaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectRYPK\V_KL.resx">
+      <DependentUpon>V_KL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectRYPK\V_Nom.resx">
+      <DependentUpon>V_Nom.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".vs\ProfInspector\v17\" />
+    <Folder Include=".vs\ProjectRYPK\FileContentIndex\merges\" />
+    <Folder Include="ProjectRYPK\bin\Release\" />
+    <Folder Include="ProjectRYPK\obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+  <Import Project="packages\Microsoft.NETFramework.ReferenceAssemblies.net40.1.0.3\build\Microsoft.NETFramework.ReferenceAssemblies.net40.targets" Condition="Exists('packages\Microsoft.NETFramework.ReferenceAssemblies.net40.1.0.3\build\Microsoft.NETFramework.ReferenceAssemblies.net40.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.NETFramework.ReferenceAssemblies.net40.1.0.3\build\Microsoft.NETFramework.ReferenceAssemblies.net40.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.NETFramework.ReferenceAssemblies.net40.1.0.3\build\Microsoft.NETFramework.ReferenceAssemblies.net40.targets'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
