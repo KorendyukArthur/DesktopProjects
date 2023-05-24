@@ -1,0 +1,64 @@
+{% extends 'main/layout.html'  %}
+{% load static %}
+{% block title %}
+Форма для добавления статей
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<form method="post">
+
+<div class="features">
+        <h2>Форма заявки на бронирование</h2>
+
+        <img src="{% static 'main/img/7_zhemchzhina.jpg' %}" alt="Альтернативный текст" width="500" height="300">
+    <div class="features5">
+        <span> {{error}} </span>
+
+
+    </div>
+    </div>
+            {% csrf_token %}
+
+<div class="wrapper">
+
+    <div class="column4">
+            {{ form.name_tur }}
+    </div>
+       <div class="column4">
+            {{ form.surname_user }}
+    </div>
+    <div class="column4">
+            {{ form.name_user }}
+    </div>
+    <div class="column4">
+            {{ form.surname_2_user }}
+    </div>
+    <div class="column4">
+            {{ form.date_z }}
+        {{ form.date_v }}
+    </div>
+
+        <div class="column4">
+            {{ form.number_user }}
+            {{ form.number_human }}
+            {{ form.date_message }}
+            <button class="btn btn-success" type="submit">Отправить заявку на бронь</button>
+        </div>
+</div>
+</div>
+
+
+        </form>
+
+
+
+
+{% endblock %}
+
+
+
+

@@ -9,9 +9,9 @@
         {% if news %}
             {% for el in news %}
                 <div class="alert alert-warning">
-                    <h2>
+                    <h3>
                         {{ el.title }}
-                    </h2>
+                    </h3>
                     <p>
                         {{ el.anons }}
                     </p>
@@ -21,9 +21,19 @@
         {% else %}
             <p> Нет записей </p>
         {% endif %}
-        <button
-             class="btn btn-warning"> о сайте
-        </button>
+
 
     </div>
+<div class="features">
+
+    <h5>
+            Электронная почта: a624713@gmail.com
+        </h5>
+
+        <p>
+            Так же вы можете обратиться на нашу горячую линию
+            +7 (800) 800 80 80
+        </p>
+
+        </div>
 {% endblock %}

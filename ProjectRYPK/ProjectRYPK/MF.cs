@@ -78,5 +78,13 @@ namespace ProjectRYPK
         {
 
         }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            Dialog opn7 = new Dialog();
+            this.Hide();
+            opn7.ShowDialog();
+            this.Show();
+        }
     }
 }

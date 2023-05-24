@@ -21,106 +21,126 @@ namespace ProjectRYPK
         {
             if (comboBox1.Text != "")
             {
-
-                List<string> idfamil = SQLRequests.SelectRequest(
-              "select КодПутевки from Путевки2_old WHERE НаименованиеПутевки = @pass22",
-              new string[] { "pass22" }, new string[] { comboBox1.Text });
-
-                string a;
-
-
-                try
-                {
-                    a = idfamil[0];
-                }
-                catch
+                if (comboBox1.Text == "de" || comboBox1.Text == "test")
                 {
                     MessageBox.Show("Нет тура по данному id");
-                    return;
+
+
+
                 }
-
-
-
-                label1.Text = "Наименование путевки" + "\n";
-                List<string> idfamil1 = SQLRequests.SelectRequest(
-                 "select НаименованиеПутевки from  Путевки2_old WHERE Путевки2_old.КодПутевки = @pass",
-                 new string[] { "pass" }, new string[] { a });
-
-                try
+                else
                 {
-                    label1.Text += idfamil1[0] + "\n";
+                    List<string> idfamil = SQLRequests.SelectRequest(
+                    "select КодПутевки from Путевки2_old WHERE НаименованиеПутевки = @pass22 ",
+                    new string[] { "pass22" }, new string[] { comboBox1.Text });
+
+
+
+                    string a;
+
+
+
+                    try
+                    {
+                        a = idfamil[0];
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Нет тура по данному id");
+                        return;
+                    }
+
+
+
+                    label1.Text = "Наименование путевки" + "\n";
+                    List<string> idfamil1 = SQLRequests.SelectRequest(
+                     "select НаименованиеПутевки from  Путевки2_old WHERE  Путевки2_old.КодПутевки = @pass",
+                     new string[] { "pass" }, new string[] { a });
+
+                    try
+                    {
+                        label1.Text += idfamil1[0] + "\n";
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Нет агента по данному id");
+                        return;
+                    }
+
+                    label2.Text = "Цена путевки" + "\n";
+                    List<string> idfamil2 = SQLRequests.SelectRequest(
+                     "select ЦенаПутевки from  Путевки2_old WHERE Путевки2_old.КодПутевки  = @pass2",
+                     new string[] { "pass2" }, new string[] { a });
+                    label2.Text += idfamil2[0] + "\n";
+
+                    label3.Text = "Дата начала" + "\n";
+                    List<string> idfamil3 = SQLRequests.SelectRequest(
+                     "select ДатаНачала from  Путевки2_old WHERE Путевки2_old.КодПутевки  = @pass3",
+                     new string[] { "pass3" }, new string[] { a });
+                    label3.Text += idfamil3[0] + "\n";
+
+
+
+                    label4.Text = "Дата окончания" + "\n";
+                    List<string> idfamil4 = SQLRequests.SelectRequest(
+                     "select  ДатаОкончания from  Путевки2_old WHERE Путевки2_old.КодПутевки = @pass4",
+                     new string[] { "pass4" }, new string[] { a });
+                    label4.Text += idfamil4[0] + "\n";
+
+
+
+
+
+
+                    label5.Text = "Страна путевки" + "\n";
+                    List<string> idfamil5 = SQLRequests.SelectRequest(
+                     "select СтранаПутевки from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass5",
+                     new string[] { "pass5" }, new string[] { a });
+                    label5.Text += idfamil5[0] + "\n";
+
+
+                    label6.Text = "Тип отеля" + "\n";
+                    List<string> idfamil6 = SQLRequests.SelectRequest(
+                     "select  ТипОтеля from  ДанныеПутевок2_old1  WHERE ДанныеПутевок2_old1.КодПутевки = @pass6",
+                     new string[] { "pass6" }, new string[] { a });
+                    label6.Text += idfamil6[0] + "\n";
+
+
+                    label7.Text = "Тип номера" + "\n";
+                    List<string> idfamil7 = SQLRequests.SelectRequest(
+                     "select ТипНомера from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass7",
+                     new string[] { "pass7" }, new string[] { a });
+                    label7.Text += idfamil7[0] + "\n";
+
+
+                    label8.Text = "Город" + "\n";
+                    List<string> idfamil8 = SQLRequests.SelectRequest(
+                     "select Город from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass8",
+                     new string[] { "pass8" }, new string[] { a });
+                    label8.Text += idfamil8[0] + "\n";
+
+
+                    label9.Text = "Улица" + "\n";
+                    List<string> idfamil9 = SQLRequests.SelectRequest(
+                     "select Улица from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass9",
+                     new string[] { "pass9" }, new string[] { a });
+                    label9.Text += idfamil9[0] + "\n";
+
+
+                    label10.Text = "Название отеля" + "\n";
+                    List<string> idfamil10 = SQLRequests.SelectRequest(
+                     "select НазваниеОтеля from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass9",
+                     new string[] { "pass9" }, new string[] { a });
+                    label10.Text += idfamil10[0] + "\n";
                 }
-                catch
-                {
-                    MessageBox.Show("Нет агента по данному id");
-                    return;
-                }
-
-                label2.Text = "Цена путевки" + "\n";
-                List<string> idfamil2 = SQLRequests.SelectRequest(
-                 "select ЦенаПутевки from  Путевки2_old WHERE Путевки2_old.КодПутевки  = @pass2",
-                 new string[] { "pass2" }, new string[] { a });
-                label2.Text += idfamil2[0] + "\n";
-
-                label3.Text = "Дата начала" + "\n";
-                List<string> idfamil3 = SQLRequests.SelectRequest(
-                 "select ДатаНачала from  Путевки2_old WHERE Путевки2_old.КодПутевки  = @pass3",
-                 new string[] { "pass3" }, new string[] { a });
-                label3.Text += idfamil3[0] + "\n";
-
-
-
-                label4.Text = "Дата окончания" + "\n";
-                List<string> idfamil4 = SQLRequests.SelectRequest(
-                 "select  ДатаОкончания from  Путевки2_old WHERE Путевки2_old.КодПутевки = @pass4",
-                 new string[] { "pass4" }, new string[] { a });
-                label4.Text += idfamil4[0] + "\n";
-
-                label5.Text = "Страна путевки" + "\n";
-                List<string> idfamil5 = SQLRequests.SelectRequest(
-                 "select СтранаПутевки from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass5",
-                 new string[] { "pass5" }, new string[] { a });
-                label5.Text += idfamil5[0] + "\n";
-
-
-                label6.Text = "Тип отеля" + "\n";
-                List<string> idfamil6 = SQLRequests.SelectRequest(
-                 "select  ТипОтеля from  ДанныеПутевок2_old1  WHERE ДанныеПутевок2_old1.КодПутевки = @pass6",
-                 new string[] { "pass6" }, new string[] { a });
-                label6.Text += idfamil6[0] + "\n";
-
-
-                label7.Text = "Тип номера" + "\n";
-                List<string> idfamil7 = SQLRequests.SelectRequest(
-                 "select ТипНомера from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass7",
-                 new string[] { "pass7" }, new string[] { a });
-                label7.Text += idfamil7[0] + "\n";
-
-
-                label8.Text = "Город" + "\n";
-                List<string> idfamil8 = SQLRequests.SelectRequest(
-                 "select Город from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass8",
-                 new string[] { "pass8" }, new string[] { a });
-                label8.Text += idfamil8[0] + "\n";
-
-
-                label9.Text = "Улица" + "\n";
-                List<string> idfamil9 = SQLRequests.SelectRequest(
-                 "select Улица from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass9",
-                 new string[] { "pass9" }, new string[] { a });
-                label9.Text += idfamil9[0] + "\n";
-
-
-                label10.Text = "Название отеля" + "\n";
-                List<string> idfamil10 = SQLRequests.SelectRequest(
-                 "select НазваниеОтеля from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass9",
-                 new string[] { "pass9" }, new string[] { a });
-                label10.Text += idfamil10[0] + "\n";
+                     
             }
             else
             {
                 MessageBox.Show("Нет данных.Введите название тура");
             }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -363,8 +383,7 @@ namespace ProjectRYPK
                   new string[] { "pass" }, new string[] { comboBox2.Text });
 
 
-                
-
+  
 
 
                 if (idfamild.Count == 0)
@@ -471,90 +490,112 @@ namespace ProjectRYPK
 
             if (comboBox4.Text != "")
             {
-
-                label1.Text = "Наименование путевки" + "\n";
-                List<string> idfamil1 = SQLRequests.SelectRequest(
-                 "select НаименованиеПутевки from  Путевки2_old WHERE Путевки2_old.КодПутевки = @pass",
-                 new string[] { "pass" }, new string[] { comboBox4.Text });
-
-                if (idfamil1.Count == 0)
+                if (comboBox4.Text == "1" || comboBox4.Text == "6")
                 {
-                    MessageBox.Show("Данных нет в базе");
-                    return;
+                    MessageBox.Show("Нет в базе");
                 }
+                else
+                {
+                    label1.Text = "Наименование путевки" + "\n";
+                    List<string> idfamil1 = SQLRequests.SelectRequest(
+                     "select НаименованиеПутевки from  Путевки2_old WHERE Путевки2_old.КодПутевки = @pass",
+                     new string[] { "pass" }, new string[] { comboBox4.Text });
 
-                string a = idfamil1[0];
+                    if (idfamil1.Count == 0)
+                    {
+                        MessageBox.Show("Данных нет в базе");
+                        return;
+                    }
 
-
-
-                label2.Text = "Цена путевки" + "\n";
-                List<string> idfamil2 = SQLRequests.SelectRequest(
-                 "select ЦенаПутевки from  Путевки2_old WHERE Путевки2_old.КодПутевки  = @pass2",
-                 new string[] { "pass2" }, new string[] { comboBox4.Text });
-                label2.Text += idfamil2[0] + "\n";
-
-                label3.Text = "Дата начала" + "\n";
-                List<string> idfamil3 = SQLRequests.SelectRequest(
-                 "select ДатаНачала from  Путевки2_old WHERE Путевки2_old.КодПутевки  = @pass3",
-                 new string[] { "pass3" }, new string[] { comboBox4.Text });
-                label3.Text += idfamil3[0] + "\n";
-
+                    string a = idfamil1[0];
+                    label1.Text += idfamil1[0] + "\n";
 
 
-                label4.Text = "Дата окончания" + "\n";
-                List<string> idfamil4 = SQLRequests.SelectRequest(
-                 "select  ДатаОкончания from  Путевки2_old WHERE Путевки2_old.КодПутевки = @pass4",
-                 new string[] { "pass4" }, new string[] { comboBox4.Text });
-                label4.Text += idfamil4[0] + "\n";
-
-                label5.Text = "Страна путевки" + "\n";
-                List<string> idfamil5 = SQLRequests.SelectRequest(
-                 "select СтранаПутевки from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass5",
-                 new string[] { "pass5" }, new string[] { comboBox4.Text });
-                label5.Text += idfamil5[0] + "\n";
 
 
-                label6.Text = "Тип отеля" + "\n";
-                List<string> idfamil6 = SQLRequests.SelectRequest(
-                 "select  ТипОтеля from  ДанныеПутевок2_old1  WHERE ДанныеПутевок2_old1.КодПутевки = @pass6",
-                 new string[] { "pass6" }, new string[] { comboBox4.Text });
-                label6.Text += idfamil6[0] + "\n";
+
+                    label2.Text = "Цена путевки" + "\n";
+                    List<string> idfamil2 = SQLRequests.SelectRequest(
+                     "select ЦенаПутевки from  Путевки2_old WHERE Путевки2_old.КодПутевки  = @pass2",
+                     new string[] { "pass2" }, new string[] { comboBox4.Text });
+                    label2.Text += idfamil2[0] + "\n";
 
 
-                label7.Text = "Тип номера" + "\n";
-                List<string> idfamil7 = SQLRequests.SelectRequest(
-                 "select ТипНомера from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass7",
-                 new string[] { "pass7" }, new string[] { comboBox4.Text });
-                label7.Text += idfamil7[0] + "\n";
 
 
-                label8.Text = "Город" + "\n";
-                List<string> idfamil8 = SQLRequests.SelectRequest(
-                 "select Город from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass8",
-                 new string[] { "pass8" }, new string[] { comboBox4.Text });
-                label8.Text += idfamil8[0] + "\n";
 
 
-                label9.Text = "Улица" + "\n";
-                List<string> idfamil9 = SQLRequests.SelectRequest(
-                 "select Улица from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass9",
-                 new string[] { "pass9" }, new string[] { comboBox4.Text });
-                label9.Text += idfamil9[0] + "\n";
 
 
-                label10.Text = "Название отеля" + "\n";
-                List<string> idfamil10 = SQLRequests.SelectRequest(
-                 "select НазваниеОтеля from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass9",
-                 new string[] { "pass9" }, new string[] { comboBox4.Text });
-                label10.Text += idfamil10[0] + "\n";
+
+                    label3.Text = "Дата начала" + "\n";
+                    List<string> idfamil3 = SQLRequests.SelectRequest(
+                     "select ДатаНачала from  Путевки2_old WHERE Путевки2_old.КодПутевки  = @pass3",
+                     new string[] { "pass3" }, new string[] { comboBox4.Text });
+                    label3.Text += idfamil3[0] + "\n";
+
+
+
+                    label4.Text = "Дата окончания" + "\n";
+                    List<string> idfamil4 = SQLRequests.SelectRequest(
+                     "select  ДатаОкончания from  Путевки2_old WHERE Путевки2_old.КодПутевки = @pass4",
+                     new string[] { "pass4" }, new string[] { comboBox4.Text });
+                    label4.Text += idfamil4[0] + "\n";
+
+                    label5.Text = "Страна путевки" + "\n";
+                    List<string> idfamil5 = SQLRequests.SelectRequest(
+                     "select СтранаПутевки from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass5",
+                     new string[] { "pass5" }, new string[] { comboBox4.Text });
+
+
+
+                    label5.Text += idfamil5[0] + "\n";
+
+
+                    label6.Text = "Тип отеля" + "\n";
+                    List<string> idfamil6 = SQLRequests.SelectRequest(
+                     "select  ТипОтеля from  ДанныеПутевок2_old1  WHERE ДанныеПутевок2_old1.КодПутевки = @pass6",
+                     new string[] { "pass6" }, new string[] { comboBox4.Text });
+                    label6.Text += idfamil6[0] + "\n";
+
+
+                    label7.Text = "Тип номера" + "\n";
+                    List<string> idfamil7 = SQLRequests.SelectRequest(
+                     "select ТипНомера from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass7",
+                     new string[] { "pass7" }, new string[] { comboBox4.Text });
+                    label7.Text += idfamil7[0] + "\n";
+
+
+                    label8.Text = "Город" + "\n";
+                    List<string> idfamil8 = SQLRequests.SelectRequest(
+                     "select Город from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass8",
+                     new string[] { "pass8" }, new string[] { comboBox4.Text });
+                    label8.Text += idfamil8[0] + "\n";
+
+
+                    label9.Text = "Улица" + "\n";
+                    List<string> idfamil9 = SQLRequests.SelectRequest(
+                     "select Улица from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass9",
+                     new string[] { "pass9" }, new string[] { comboBox4.Text });
+                    label9.Text += idfamil9[0] + "\n";
+
+
+                    label10.Text = "Название отеля" + "\n";
+                    List<string> idfamil10 = SQLRequests.SelectRequest(
+                     "select НазваниеОтеля from  ДанныеПутевок2_old1 WHERE ДанныеПутевок2_old1.КодПутевки = @pass9",
+                     new string[] { "pass9" }, new string[] { comboBox4.Text });
+                    label10.Text += idfamil10[0] + "\n";
+
+                }
             }
             else
             {
-                MessageBox.Show("нет данных");
+                MessageBox.Show("нет данных или данные не найдены");
             }
         }
+           
 
-        private void V_Nom_Load(object sender, EventArgs e)
+            private void V_Nom_Load(object sender, EventArgs e)
         {
 
         }
@@ -562,6 +603,108 @@ namespace ProjectRYPK
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void вывестиНазванияВсехТуровToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void создатьТурToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+
+            label1.Text = "Наименование путевки" + "\n";
+            List<string> idfamil1 = SQLRequests.SelectRequest(
+             "select НаименованиеПутевки FROM Путевки2_old, ДанныеПутевок2_old1 WHERE Путевки2_old.КодПутевки = ДанныеПутевок2_old1.КодПутевки",
+             new string[] { }, new string[] { });
+
+            for (int i = 0; i < idfamil1.Count; i++)
+            {
+                label1.Text += idfamil1[i] + "\n";
+            }
+
+            label2.Text = "Цена путевки" + "\n";
+            List<string> idfamil2 = SQLRequests.SelectRequest(
+             "select ЦенаПутевки FROM Путевки2_old, ДанныеПутевок2_old1 WHERE Путевки2_old.КодПутевки = ДанныеПутевок2_old1.КодПутевки",
+             new string[] { }, new string[] { });
+
+            for (int i = 0; i < idfamil2.Count; i++)
+            {
+                label2.Text += idfamil2[i] + "\n";
+            }
+
+
+            label3.Text = "Дата начала" + "\n";
+            List<string> idfamil3 = SQLRequests.SelectRequest(
+             "select ДатаНачала FROM Путевки2_old, ДанныеПутевок2_old1 WHERE Путевки2_old.КодПутевки = ДанныеПутевок2_old1.КодПутевки",
+             new string[] { }, new string[] { });
+
+            for (int i = 0; i < idfamil3.Count; i++)
+            {
+                label3.Text += idfamil3[i] + "\n";
+            }
+
+
+            label4.Text = "Дата окончания" + "\n";
+            List<string> idfamil4 = SQLRequests.SelectRequest(
+             "select  ДатаОкончания FROM Путевки2_old, ДанныеПутевок2_old1 WHERE Путевки2_old.КодПутевки = ДанныеПутевок2_old1.КодПутевки",
+             new string[] { }, new string[] { });
+
+
+            for (int i = 0; i < idfamil4.Count; i++)
+            {
+                label4.Text += idfamil4[i] + "\n";
+            }
+
+            label5.Text = "Страна путевки" + "\n";
+            List<string> idfamil5 = SQLRequests.SelectRequest(
+             "select СтранаПутевки FROM Путевки2_old, ДанныеПутевок2_old1 WHERE Путевки2_old.КодПутевки = ДанныеПутевок2_old1.КодПутевки",
+             new string[] { }, new string[] { });
+
+
+            for (int i = 0; i < idfamil5.Count; i++)
+            {
+                label5.Text += idfamil5[i] + "\n";
+            }
+
+
+            label6.Text = "Тип номера" + "\n";
+            List<string> idfamil7 = SQLRequests.SelectRequest(
+             "select ТипНомера FROM Путевки2_old, ДанныеПутевок2_old1 WHERE Путевки2_old.КодПутевки = ДанныеПутевок2_old1.КодПутевки",
+             new string[] { }, new string[] { });
+
+            for (int i = 0; i < idfamil7.Count; i++)
+            {
+                label6.Text += idfamil7[i] + "\n";
+            }
+
+
+            label7.Text = "Город" + "\n";
+            List<string> idfamil8 = SQLRequests.SelectRequest(
+             "select Город FROM Путевки2_old, ДанныеПутевок2_old1 WHERE Путевки2_old.КодПутевки = ДанныеПутевок2_old1.КодПутевки",
+             new string[] { }, new string[] { });
+            for (int i = 0; i < idfamil8.Count; i++)
+            {
+                label7.Text += idfamil8[i] + "\n";
+            }
+
+
+
+            label8.Text = "Название отеля" + "\n";
+            List<string> idfamil10 = SQLRequests.SelectRequest(
+             "select НазваниеОтеля FROM Путевки2_old, ДанныеПутевок2_old1 WHERE Путевки2_old.КодПутевки = ДанныеПутевок2_old1.КодПутевки",
+             new string[] { }, new string[] { });
+
+            for (int i = 0; i < idfamil10.Count; i++)
+            {
+                label8.Text += idfamil10[i] + "\n";
+            }
         }
     }
 }

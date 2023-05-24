@@ -50,3 +50,6 @@ C:\Users\Артур\source\repos\ProjectRYPK\ProjectRYPK\obj\Debug\ProjectRYPK.c
 C:\Users\Артур\source\repos\ProjectRYPK\ProjectRYPK\obj\Debug\ProjectRYPK.exe
 C:\Users\Артур\source\repos\ProjectRYPK\ProjectRYPK\obj\Debug\ProjectRYPK.pdb
 C:\Users\Артур\source\repos\ProjectRYPK\ProjectRYPK\obj\Debug\ProjectRYPK.exe.config
+C:\Users\Артур\source\repos\ProjectRYPK\ProjectRYPK\bin\Debug\MySql.Data.dll
+C:\Users\Артур\source\repos\ProjectRYPK\ProjectRYPK\bin\Debug\MySql.Data.xml
+C:\Users\Артур\source\repos\ProjectRYPK\ProjectRYPK\obj\Debug\ProjectRYPK.Dialog.resources

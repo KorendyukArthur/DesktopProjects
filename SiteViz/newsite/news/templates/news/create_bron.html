@@ -1,0 +1,142 @@
+{% extends 'main/layout.html'  %}
+{% load static %}
+{% block title %}
+Форма для добавления статей
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<form action="" method="post">
+    {% csrf_token %}
+<div class="features">
+        <h2>Форма заявки на бронирование</h2>
+
+        <img src="{% static 'main/img/7_zhemchzhina.jpg' %}" alt="Альтернативный текст" width="500" height="300">
+    <div class="features5">
+        <span> {{error}} </span>
+
+
+    </div>
+    </div>
+            {% csrf_token %}
+
+<div class="wrapper">
+
+    <div class="column4">
+
+            {{ form.name_tur }}
+    </div>
+       <div class="column4">
+            {{ form.surname_user }}
+    </div>
+    <div class="column4">
+            {{ form.name_user }}
+    </div>
+    <div class="column4">
+            {{ form.surname_2_user }}
+    </div>
+    <div class="column4">
+
+
+
+
+        <div class="form-group">
+           <div class="input-group date"  data-target-input="nearest">
+               {{ form.date_z }}
+
+
+            </div>
+        </div>
+
+
+        <div class="form-group">
+           <div class="input-group date"   data-target-input="nearest">
+               {{ form.date_v }}
+
+
+            </div>
+        </div>
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/locale/ru.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker7').datetimepicker(
+                   {   format: 'DD/MM/YYYY HH:mm',
+     }
+
+                );
+        $('#datetimepicker8').datetimepicker( {  format: 'DD/MM/YYYY HH:mm',
+   });
+
+
+
+
+        $("#datetimepicker7").on("change.datetimepicker", function (e) {
+            $('#datetimepicker8').datetimepicker('minDate', e.date);
+        });
+        $("#datetimepicker8").on("change.datetimepicker", function (e) {
+            $('#datetimepicker7').datetimepicker('maxDate', e.date);
+        });
+    });
+</script>
+
+
+
+        <div class="column4" >
+
+            {{ form.number_user }}
+            {{ form.number_human }}
+
+
+
+            <div class="form-group">
+           <div class="input-group date"   data-target-input="nearest">
+               {{ form.date_message }}
+            </div>
+        </div>
+
+
+
+
+            <button class="btn btn-success" type="submit">Отправить заявку на бронь</button>
+        </div>
+</div>
+<
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker7').datetimepicker({
+                    locale: 'ru'
+                });
+            });
+        </script>
+
+    <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker9').datetimepicker({
+                    locale: 'ru'
+                });
+            });
+        </script>
+    </div>
+</div>
+
+
+
+</div>
+
+
+        </form>
+
+
+
+
+{% endblock %}
+
+
+
+

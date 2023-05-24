@@ -9,8 +9,8 @@ namespace ProjectRYPK
 {
      class DB
     {
-        //подключение к базе данных 
-        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=Sneg1123!;database=baset");
+        //подключение к базе данных databasenew.auth_user
+        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=Sneg1123;database=databasenew");
         
         public void openConnection()
         {

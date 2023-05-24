@@ -274,7 +274,7 @@ namespace ProjectRYPK
         {
             label1.Text = " "; label2.Text = " "; label3.Text = " "; label4.Text = " ";
             label5.Text = " "; label6.Text = " "; label7.Text = " "; label8.Text = " ";
-            label9.Text = " "; label10.Text = " ";
+            label9.Text = " "; label10.Text = " "; label11.Text = " "; label12.Text = " "; 
 
         }
 
