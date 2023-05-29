@@ -1,0 +1,71 @@
+{% extends 'main/layout.html'  %}
+
+{% block title %}
+Форма для добавления статей
+{% endblock %}
+
+{% block content %}
+
+
+{% csrf_token %}
+<form method="post">
+            {% csrf_token %}
+ <div class="features">
+        <h1>Сообщения пользователей</h1>
+
+                <div class="alert alert-warning">
+                    <p>
+                        {{ user1.username }}<br>
+
+
+                    <p>Дополнительно </p>
+                    <input id="user1_id"  readonly="readonly" name="user1_id" value="{{ user.username }}">
+                    <p> обращение к </p>
+                    <input id="user2_id"  readonly="readonly" name="user2_id" value="{{ username }} ">
+
+
+
+            {{ form.full_text }}<br>
+            {{ form.date }}<br>
+                    </p>
+
+                </div>
+
+        <button type="submit"
+             class="btn btn-warning"> отправить
+        </button>
+
+    </div>
+</form>
+<div class="features">
+        <h1>Новости на сайте</h1>
+        {% if obj %}
+            {% for el in obj %}
+                <div class="alert alert-warning">
+                    <h3>
+                        {{ el.user1_id }}
+                    </h3>
+                    <p>
+                        {{ el.user2_id }}
+                    </p>
+                     <p>
+                        {{ el.full_text }}
+                    </p>
+
+                    <p>
+                        {{ el.date }}
+                    </p>
+
+                </div>
+            {% endfor %}
+        {% else %}
+            <p> Нет записей </p>
+        {% endif %}
+
+
+    </div>
+{% endblock %}
+
+
+
+

@@ -1,7 +1,10 @@
+import datetime
+
+import username
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.core.validators import RegexValidator
-
+from pip._internal.cli import parser
 
 
 
@@ -29,13 +32,15 @@ class Articles(models.Model):
 
 
 class Chat(models.Model):
-    id_user = models.CharField('id пользователя', max_length=50)
+    user_id = models.CharField('Фамилия пользователя', max_length=50)
     min_text = models.CharField('Описание', max_length=250)
     full_text = models.TextField('Сообщение')
-    date = models.DateTimeField('Дата отправки')
+    date = models.DateTimeField('Дата')
+
+
 
     def __str__(self):
-        return self.id_user
+        return self.user_id
 
     class Meta:
         verbose_name = 'Чат'
@@ -44,6 +49,8 @@ class Chat(models.Model):
     # метод для переадресации пользователей после обновления и редактирования статьи
     def get_absolute_url(self):
         return f'/news/{self.id}'
+
+
 
 
 class ChatBron(models.Model):
@@ -87,9 +94,12 @@ class ChatBron(models.Model):
         (
         regex='^[0-9]*$')])
 
+    date_v = models.DateTimeField('Дата выезда')
 
     date_z = models.DateTimeField('Дата заезда')
-    date_v = models.DateTimeField('Дата выезда')
+
+
+
 
 
     number_human = models.CharField('Количество человек', max_length=11,
@@ -108,9 +118,20 @@ class ChatBron(models.Model):
     def get_absolute_url(self):
         return f'/news/{self.id}'
 
-def validat(date_z,date_v):
-    if value.date_z <= value.date_v:
-        raise ValidationError(
-            ("%(value)s is not an even number"),
-            params={"value": value},)
+class ChatPrivate(models.Model):
 
+    user1_id = models.CharField('Идентификатор пользователя', max_length=50)
+    user2_id = models.CharField('Идентификатор администратора', max_length=50)
+    full_text = models.TextField('Сообщение')
+    date = models.DateTimeField('Дата отправки')
+
+    def __str__(self):
+        return self.user1_id
+
+    class Meta:
+        verbose_name = 'ОбщийЧат'
+        verbose_name_plural = 'ОбщиеЧаты'
+
+    # метод для переадресации пользователей после обновления и редактирования статьи
+    def get_absolute_url(self):
+        return f'/news/{self.user1_id}'

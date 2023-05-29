@@ -1,8 +1,28 @@
-from django.shortcuts import render, redirect
-from .models import Articles, Chat
-from .forms import ArticlesForm, ChatForm, ChatBron, ChatBronForm
-from django.views.generic import DetailView, UpdateView, DeleteView
 
+from django.shortcuts import render, redirect
+from .models import Articles, Chat, ChatPrivate
+from .forms import ArticlesForm, ChatForm, ChatBron, ChatBronForm, ChatPrivateForm
+from django.views.generic import DetailView, UpdateView, DeleteView
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+
+
+
+# передача данных создание класса
+class UserDetailView(DetailView):
+    model = User
+    # шаблон который обрабатывет страницу
+    template_name = 'news/dialogchat_detail.html'
+    # ключ для шаблона
+    context_object_name = 'user1'
+
+class UserDetailView1(DetailView):
+    model = User
+    # шаблон который обрабатывет страницу
+    template_name = 'news/dialogchat_detail_test.html'
+    # ключ для шаблона
+    context_object_name = 'user1'
 
 # передача данных создание класса
 class NewsDetailView(DetailView):
@@ -111,7 +131,7 @@ def create_bron(request):
 
             form.save()
             # переадресация на другую страницу
-            return redirect('home')
+            return redirect('successful_registration')
         else:
 
             error = 'форма была неверной'
@@ -129,8 +149,10 @@ def create_chat(request):
     error = ''
     # получение данных из формы
     # проверка на работу метода пост
+
     if request.method == 'POST':
         form = ChatForm(request.POST)
+
         # метод на проверку правильности данных
         if form.is_valid():
             # сохранение данных
@@ -173,10 +195,10 @@ def create_bron_dop(request):
 
             form.save()
             # переадресация на другую страницу
-            return redirect('home')
+            return redirect('successful_registration')
         else:
 
-            error = 'форма была неверной'
+            error = 'Данные были введены не верно! Пожалуйста убедитесь в правильности данных'
 
     form = ChatBronForm()
     data = {
@@ -185,3 +207,85 @@ def create_bron_dop(request):
     }
 
     return render(request, 'news/create_bron.html', data)
+
+def successful_registration(request):
+    return render(request, 'news/successful_registration.html')
+
+
+
+
+def create_chat_private(request):
+
+    error = ''
+    # получение данных из формы
+    # проверка на работу метода пост
+
+    if request.method == 'POST':
+        form = ChatPrivateForm(request.POST)
+
+        # метод на проверку правильности данных
+        if form.is_valid():
+            # сохранение данных
+            form.save()
+            # переадресация на другую страницу
+            messages.success(request, 'Сообщение было доставлено!!')
+        else:
+            error = 'форма была неверной'
+    s = request.user
+    form = ChatPrivateForm()
+    ctp = ChatPrivate.objects.filter(user1_id = 'sadmins',user2_id = s ).order_by('date').values() | ChatPrivate.objects.filter(user1_id = s ).order_by('date').values()
+
+    data = {
+        'form': form,
+        'error': error,
+        'ctp': ctp,
+
+    }
+
+    return render(request, 'news/createchatprivate.html', data)
+
+
+def dialogchat(request):
+    users_list = User.objects.all()
+    news = User.objects.order_by('id')
+    # для получения данных вставляются данные третим параметром
+    return render(request, 'news/dialogchat.html', {'users_list': users_list})
+
+
+
+
+
+def dialogchat_detail_test(request,username):
+    error = ''
+    # получение данных из формы
+    # проверка на работу метода пост
+
+
+    if request.method == 'POST':
+        form = ChatPrivateForm(request.POST)
+        dt = User(request.GET)
+
+
+        # метод на проверку правильности данных
+        if form.is_valid():
+            # сохранение данных
+            form.save()
+            # переадресация на другую страницу
+        else:
+            error = 'форма была неверной'
+
+
+    obj = ChatPrivate.objects.filter(user1_id = 'sadmins', user2_id = username).order_by('date').values()| ChatPrivate.objects.filter(user2_id = 'sadmins', user1_id = username).order_by('date').values()
+
+    form = ChatPrivateForm()
+    dt = User()
+    dt1 = UserDetailView()
+    data = {
+        'form': form,
+        'dt' : dt,
+        'username' : username,
+        'obj': obj,
+        'error': error
+    }
+
+    return render(request, 'news/dialogchat_detail_test.html', data)

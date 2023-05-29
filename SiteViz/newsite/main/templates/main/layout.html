@@ -100,12 +100,14 @@
                 <a class="btn btn-light btn-sm" href="{% url 'profile' %}">Профиль</a>
                 <a class="btn btn-light btn-sm" href="{% url 'logout' %}">Выход</a>
                 <a class="btn btn-danger btn-sm" href="{% url 'layout_admin' %}">Вход в админ панель</a>
-                <a class="btn btn-danger btn-sm" href="{% url 'createchat' %}">Написать сообщение администратору</a>
+                <a class="btn btn-danger btn-sm" href="{% url 'createchat' %}">Написать сообщение по поводу путевки</a>
+                <a class="btn btn-danger btn-sm" href="{% url 'createchatprivate' %}">Написать в чат </a>
+                <a class="btn btn-danger btn-sm" href="{% url 'dialogchat' %}">Написать в админ - чат </a>
                 <a class="btn btn-outline-success btn-sm " href="{% url 'create_bron' %}">Оформить регистрацию путевки</a>
 
               {% else %}
                 <a class="btn btn-light" href="{% url 'login' %}">Вход</a>
-                <a class="btn btn-light" href="{% url 'register' %}">Регистрация</a>
+
               {% endif %}
             </div>
      </div>

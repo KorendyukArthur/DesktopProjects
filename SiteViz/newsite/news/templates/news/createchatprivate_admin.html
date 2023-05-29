@@ -5,7 +5,27 @@
 {% endblock %}
 
 {% block content %}
-    <div class="features">
+
+
+<div class="features">
+        <h1>Новости на сайте</h1>
+        {% if news %}
+            {% for el in news %}
+                <div class="alert alert-warning">
+                    <h3>
+                        {{ el.title }}
+                    </h3>
+                    <p>
+                        {{ el.anons }}
+                    </p>
+                    <a href="{% url 'news-detail' el.id %}" class="btn btn-warning">Читать детальнее</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p> Нет записей </p>
+        {% endif %}
+
+<div class="features">
 
         <h1>Форма для отправки сообщения администратору</h1>
         {# для создания формы тег form #}
@@ -14,11 +34,8 @@
         <form method="post">
         {# коментарий для запуска передачи данных #}
             {% csrf_token %}
-
-
-
-            <input id="user_id" type="user_id" readonly="readonly" name="user_id" value="{{ user.username }}">
-
+            <input id="user1_id" type="user1_id" readonly="readonly" name="user1_id" value="{{ user.username }}">
+            <input id="user2_id" type="user_id" readonly="readonly" name="user2_id" value="{{ user.username }}">
             {{ form.min_text }}<br>
             {{ form.full_text }}<br>
             {{ form.date }}<br>

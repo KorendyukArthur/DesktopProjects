@@ -1,8 +1,14 @@
-from .models import Articles, Chat, ChatBron
+import username
+from werkzeug.routing import ValidationError
+
+from .models import Articles, Chat, ChatBron, ChatPrivate
 from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, TimeInput, DateInput, DateTimeField
 from django import forms
 from django.contrib.admin import widgets
 from django import forms
+
+from django.contrib.auth.models import User
+
 
 class ArticlesForm(ModelForm):
     class Meta:
@@ -40,14 +46,15 @@ class ArticlesForm(ModelForm):
 class ChatForm(ModelForm):
     class Meta:
         model = Chat
-        fields = ['id_user', 'min_text', 'full_text', 'date']
+        fields = ['user_id', 'min_text', 'full_text', 'date' ]
 
         widgets = {
-            'id_user': TextInput(
+            'user_id': TextInput(
                 attrs={
                     'class': 'form-control',
-                    'placeholder': 'Фамилия пользователя'
+                    'placeholder': ''
                 }),
+
 
             'min_text': TextInput(
                 attrs={
@@ -55,16 +62,17 @@ class ChatForm(ModelForm):
                     'placeholder': 'Описание сообщения'
                 }),
 
-            'date': DateTimeInput(
-                attrs={
-                    'class': 'form-control',
-                    'placeholder': 'Дата отправки'
-                }),
 
             'full_text': Textarea(
                 attrs={
                     'class': 'form-control',
                     'placeholder': 'Текст сообщения'
+                }),
+
+            'date': DateTimeInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': ''
                 }),
 
         }
@@ -111,7 +119,7 @@ class ChatBronForm(forms.ModelForm):
                     'placeholder': 'Номер телефона'
                 }),
 
-            'date_z': forms.DateTimeInput(format=('%Y-%m-%dT%H:%M'),
+            'date_z': forms.DateTimeInput(format=('%d-%m-%yT%H:%M'),
                  attrs={
                      'type': 'datetime-local',
                      'class': 'form-control datetimepicker-input',
@@ -120,7 +128,7 @@ class ChatBronForm(forms.ModelForm):
                 }),
 
 
-            'date_v':  forms.DateTimeInput(format=('%Y-%m-%dT%H:%M'),
+            'date_v':  forms.DateTimeInput(format=('%d-%m-%yT%H:%M'),
                  attrs={'type': 'datetime-local',
                     'class': 'form-control datetimepicker-input',
                     'data-target': '#datetimepicker8'}
@@ -138,3 +146,38 @@ class ChatBronForm(forms.ModelForm):
                     })
 
         }
+
+
+class ChatPrivateForm(ModelForm):
+    class Meta:
+        model = ChatPrivate
+        fields = ['user1_id', 'user2_id', 'full_text', 'date' ]
+
+        widgets = {
+            'user1_id': TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Пользователь 1'
+                }),
+
+            'user2_id': TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Пользователь 2'
+                }),
+
+            'full_text': Textarea(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Текст сообщения'
+                }),
+
+            'date': DateTimeInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Дата'
+                }),
+
+        }
+
+

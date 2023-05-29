@@ -22,6 +22,33 @@
             <button class="btn btn-success" type="submit">Добавить статью</button>
         </form>
     </div>
+ <div class="features">
+        <h1>Сообщения пользователей</h1>
+        {% if news %}
+            {% for form in news %}
+                <div class="alert alert-warning">
+                    <p>
+                        {{ form.user_id }}<br>
+                    </p>
+                    <p>
+                        {{ form.min_text }}
+                    </p>
+                    <p>
+                        {{ form.full_text }}
+                    </p>
+                    <p>
+                        {{ form.date }}
+                    </p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p> Нет записей </p>
+        {% endif %}
+        <button
+             class="btn btn-warning"> о сайте
+        </button>
+
+    </div>
 {% endblock %}
 
 

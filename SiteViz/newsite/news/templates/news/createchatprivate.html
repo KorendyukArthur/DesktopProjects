@@ -1,0 +1,76 @@
+{% extends 'main/layout.html'  %}
+
+{% block title %}
+Форма для добавления статей
+{% endblock %}
+
+{% block content %}
+
+    <div class="features3">
+{% csrf_token %}
+        <h1>Форма для отправки сообщения администратору</h1>
+
+        <form method="post">
+            <ul class="messages">
+    {% for message in messages %}
+    <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+    {% endfor %}
+</ul>
+            {% csrf_token %}
+            {% if user.is_superuser %}
+
+            <input id="user1_id" type="user1_id" readonly="readonly" name="user1_id" value="{{ user.username }}">
+            <p> обращение к </p>
+            <input id="user2_id" type="user2_id" readonly="readonly" name="user2_id" value="{{ user }} ">
+
+            {{ form.full_text }}<br>
+            {{ form.date }}<br>
+
+            {% else %}
+            <input id="user3_id" type="user1_id" readonly="readonly" name="user1_id"  value="{{ user.username }}">
+            <input id="user4_id" type="user2_id" readonly="readonly" name="user2_id" value="sadmins">
+
+            {{ form.full_text }}<br>
+            {{ form.date }}<br>
+            {% endif %}
+            <span> {{error}} </span>
+            <button class="btn btn-success" type="submit">Отправить сообщение</button>
+            {% if messages %}
+
+{% endif %}
+
+        </form>
+    </div>
+ <div class="features">
+        <h1>Сообщения пользователей</h1>
+        {% if ctp %}
+            {% for el in ctp %}
+                <div class="alert alert-warning">
+                    <p>
+                        {{ el.user1_id }}<br>
+                    </p>
+                    <p>
+                        {{ el.user2_id }}
+                    </p>
+                    <p>
+                        {{ el.full_text }}
+                    </p>
+                    <p>
+                        {{ el.date }}
+                    </p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p> Нет записей </p>
+        {% endif %}
+        <button
+             class="btn btn-warning"> о сайте
+                <a class="btn btn-outline-success btn-sm " href="{% url 'dialogchat' %}">Просмотр всех людей</a>
+        </button>
+
+    </div>
+{% endblock %}
+
+
+
+

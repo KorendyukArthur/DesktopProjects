@@ -1,0 +1,40 @@
+{% extends 'main/layout.html'  %}
+
+{% block title %}
+Форма для добавления статей
+{% endblock %}
+
+{% block content %}
+
+
+{% csrf_token %}
+
+ <div class="features">
+        <h1>Сообщения пользователей</h1>
+
+                <div class="alert alert-warning">
+                    <p>
+                        {{ user1.username }}<br>
+
+
+                    <p>Дополнительно </p>
+                    <input id="user1_id"  readonly="readonly" name="user1_id" value="{{ user.username }}">
+                    <p> обращение к </p>
+                    <input id="user2_id"  readonly="readonly" name="user2_id" value="{{ user1.username }} ">
+
+            {{ form.full_text }}<br>
+            {{ form.date }}<br>
+                    </p>
+
+                </div>
+
+        <button
+             class="btn btn-warning"> о сайте
+        </button>
+
+    </div>
+{% endblock %}
+
+
+
+
