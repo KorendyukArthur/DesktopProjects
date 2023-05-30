@@ -32,7 +32,7 @@ class Articles(models.Model):
 
 
 class Chat(models.Model):
-    user_id = models.CharField('Фамилия пользователя', max_length=50)
+    id_user = models.CharField('Фамилия пользователя', max_length=50)
     min_text = models.CharField('Описание', max_length=250)
     full_text = models.TextField('Сообщение')
     date = models.DateTimeField('Дата')
@@ -40,7 +40,7 @@ class Chat(models.Model):
 
 
     def __str__(self):
-        return self.user_id
+        return self.id_user
 
     class Meta:
         verbose_name = 'Чат'
@@ -135,3 +135,30 @@ class ChatPrivate(models.Model):
     # метод для переадресации пользователей после обновления и редактирования статьи
     def get_absolute_url(self):
         return f'/news/{self.user1_id}'
+
+class UploadFile(models.Model):
+    title = models.CharField(max_length=50, blank=True)
+    file = models.FileField(upload_to='documents/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'ОбщийЧат'
+        verbose_name_plural = 'ОбщиеЧаты'
+
+
+
+
+class UploadFileDoc (models.Model):
+    title = models.CharField(max_length=50, blank=True)
+    file = models.FileField(upload_to='documents/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'ОбщийЧат'
+        verbose_name_plural = 'ОбщиеЧаты'

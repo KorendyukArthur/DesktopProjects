@@ -1,7 +1,8 @@
-
+from django.core.files.storage import FileSystemStorage
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from .models import Articles, Chat, ChatPrivate
-from .forms import ArticlesForm, ChatForm, ChatBron, ChatBronForm, ChatPrivateForm
+from .models import Articles, Chat, ChatPrivate, UploadFile
+from .forms import ArticlesForm, ChatForm, ChatBron, ChatBronForm, ChatPrivateForm, UploadFileForm
 from django.views.generic import DetailView, UpdateView, DeleteView
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
@@ -289,3 +290,27 @@ def dialogchat_detail_test(request,username):
     }
 
     return render(request, 'news/dialogchat_detail_test.html', data)
+
+
+def model_form_upload(request):
+    if request.method == 'POST':
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = UploadFileForm()
+    return render(request, 'news/upload_file.html', {
+        'form': form
+    })
+
+
+def view_upload_file(request):
+  documents = UploadFile.objects.all()
+  return render(request, 'news/view_upload_file.html', {'documents': documents})
+
+
+
+def download_file(request,path):
+        path = open( 'rb')
+

@@ -1,4 +1,5 @@
-
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
 from . import views
 
@@ -37,5 +38,10 @@ urlpatterns = [
 
     path('dialogchat_detail_test/<str:username>', views.dialogchat_detail_test, name='dialogchat_detail_test'),
 
-]
 
+    path('upload_file', views.model_form_upload, name='upload_file'),
+    path('view_upload_file', views.view_upload_file, name='view_upload_file'),
+    path('view_load_file', views.download_file, name='view_load_file'),
+]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

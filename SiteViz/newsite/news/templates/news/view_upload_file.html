@@ -1,0 +1,18 @@
+{% extends 'main/layout.html'  %}
+{% load static %}
+
+{% block content %}
+{% csrf_token %}
+     <div class="features">
+<p>Загруженные файлы:</p>
+          {% csrf_token %}
+        {% for obj in documents %}
+            <a color="№ffff00" href="media/{{ obj.file }}"  download="{{ obj.file }}" >{{ obj.title }}</a><br>
+
+           <small>(Загружено в: {{ obj.uploaded_at }})</small>
+        {% endfor %}
+
+     </div>
+{% endblock %}
+
+

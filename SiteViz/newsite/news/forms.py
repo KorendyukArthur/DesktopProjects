@@ -1,7 +1,7 @@
 import username
 from werkzeug.routing import ValidationError
 
-from .models import Articles, Chat, ChatBron, ChatPrivate
+from .models import Articles, Chat, ChatBron, ChatPrivate, UploadFile
 from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, TimeInput, DateInput, DateTimeField
 from django import forms
 from django.contrib.admin import widgets
@@ -46,10 +46,10 @@ class ArticlesForm(ModelForm):
 class ChatForm(ModelForm):
     class Meta:
         model = Chat
-        fields = ['user_id', 'min_text', 'full_text', 'date' ]
+        fields = ['id_user', 'min_text', 'full_text', 'date' ]
 
         widgets = {
-            'user_id': TextInput(
+            'id_user': TextInput(
                 attrs={
                     'class': 'form-control',
                     'placeholder': ''
@@ -180,4 +180,9 @@ class ChatPrivateForm(ModelForm):
 
         }
 
+
+class UploadFileForm(ModelForm):
+    class Meta:
+        model = UploadFile
+        fields = ['title', 'file' ]
 
