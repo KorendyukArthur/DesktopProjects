@@ -40,7 +40,7 @@
 
  <div class="parallax" ><span class="logo"></span>
   <ul class="menu-bar">
-      <img alt="Лого" src="{% static 'main/img/33399663_8011901_photo-resizer.ru.jpg' %}">
+      <img alt="Лого" src="{% static 'main/img/lable_chd.jpg' %}">
 
 <span class="logo" ></span>
             <a href="{% url 'home'%}"><li><i class="fa-solid fa-house"></i>Главная страница</li></a>
@@ -51,12 +51,13 @@
          </ul>
     </ul>
      <div>
-            <div class="navbar-nav">
+            <div class="features6">
               {% if user.is_authenticated %}
                 <a class="btn btn-light" href="{% url 'profile' %}">Профиль</a>
                 <a class="btn btn-light" href="{% url 'logout' %}">Выход</a>
                 <a class="btn btn-danger" href="{% url 'chat_home' %}">Просмотр сообщений</a>
                 <a class="btn btn-light" href="{% url 'register' %}">Регистрация новго пользователя</a>
+                <a class="btn btn-light" href="{% url 'upload_file' %}">Работа с документами</a>
               {% else %}
                 <a class="btn btn-light" href="{% url 'login' %}">Вход</a>
                 <a class="btn btn-light" href="{% url 'register' %}">Регистрация</a>

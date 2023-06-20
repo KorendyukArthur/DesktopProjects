@@ -1,7 +1,7 @@
 import username
 from werkzeug.routing import ValidationError
 
-from .models import Articles, Chat, ChatBron, ChatPrivate, UploadFile
+from .models import Articles, Chat, ChatBron, ChatPrivate, UploadFile, AppProf1
 from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, TimeInput, DateInput, DateTimeField
 from django import forms
 from django.contrib.admin import widgets
@@ -13,32 +13,28 @@ from django.contrib.auth.models import User
 class ArticlesForm(ModelForm):
     class Meta:
         model = Articles
-        fields = ['title', 'anons', 'full_text', 'date']
+        fields = ['title', 'anons', 'full_text']
 
         widgets = {
             'title': TextInput(
                 attrs={
                     'class': 'form-control',
-                    'placeholder': 'Название статьи'
+                    'placeholder': 'Название новости'
                 }),
 
             'anons': TextInput(
                 attrs={
 
                     'class': 'form-control',
-                    'placeholder': 'Анонс статьи'
+                    'placeholder': 'Анонс новости'
                 }),
 
-            'date': DateTimeInput(
-                attrs={
-                    'class': 'form-control',
-                    'placeholder': 'Дата публикации'
-                }),
+
 
             'full_text': Textarea(
                 attrs={
                     'class': 'form-control',
-                    'placeholder': 'Текст статьи'
+                    'placeholder': 'Полный текст новости'
                 }),
 
         }
@@ -46,7 +42,7 @@ class ArticlesForm(ModelForm):
 class ChatForm(ModelForm):
     class Meta:
         model = Chat
-        fields = ['id_user', 'min_text', 'full_text', 'date' ]
+        fields = ['id_user', 'min_text', 'full_text']
 
         widgets = {
             'id_user': TextInput(
@@ -69,11 +65,7 @@ class ChatForm(ModelForm):
                     'placeholder': 'Текст сообщения'
                 }),
 
-            'date': DateTimeInput(
-                attrs={
-                    'class': 'form-control',
-                    'placeholder': ''
-                }),
+
 
         }
 
@@ -86,7 +78,7 @@ class ChatBronForm(forms.ModelForm):
     class Meta:
         model = ChatBron
         fields = ['name_tur', 'surname_user', 'name_user', 'surname_2_user', 'number_user',
-                  'date_z', 'date_v', 'number_human', 'date_message']
+                  'date_z', 'date_v', 'number_human']
 
         widgets = {
             'name_tur': forms.TextInput(
@@ -140,10 +132,6 @@ class ChatBronForm(forms.ModelForm):
                     'class': 'form-control',
                     'placeholder': 'Количество человек'
                 }),
-            'date_message': DateTimeInput(format=('%Y-%m-%dT%H:%M'),
-                 attrs={'type': 'datetime-local',
-                        'class': 'form-control datetimepicker-input',
-                    })
 
         }
 
@@ -151,7 +139,7 @@ class ChatBronForm(forms.ModelForm):
 class ChatPrivateForm(ModelForm):
     class Meta:
         model = ChatPrivate
-        fields = ['user1_id', 'user2_id', 'full_text', 'date' ]
+        fields = ['user1_id', 'user2_id', 'full_text' ]
 
         widgets = {
             'user1_id': TextInput(
@@ -172,12 +160,6 @@ class ChatPrivateForm(ModelForm):
                     'placeholder': 'Текст сообщения'
                 }),
 
-            'date': DateTimeInput(
-                attrs={
-                    'class': 'form-control',
-                    'placeholder': 'Дата'
-                }),
-
         }
 
 
@@ -186,3 +168,43 @@ class UploadFileForm(ModelForm):
         model = UploadFile
         fields = ['title', 'file' ]
 
+
+
+class AppProf1Form(ModelForm):
+    class Meta:
+        model = AppProf1
+        fields = ('last_name', 'first_name', 'father_name_user_ap', 'job_title', 'number_phone')
+
+        widgets = {
+            'last_name': TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Фамилия'
+                }),
+
+
+            'first_name': TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Имя'
+                }),
+
+            'father_name_user_ap': TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Отчество'
+                }),
+
+            'job_title': TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Должность'
+                }),
+
+            'number_phone': TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Номер телефона'
+                }),
+
+        }

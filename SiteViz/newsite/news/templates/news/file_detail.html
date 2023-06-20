@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+{{obj.title}}
+{% endblock %}
+{% block content %}
+    <div class="features">
+       <h1> {{ obj.title }} </h1>
+      <p>{{obj.file}}</p>
+      <p>{{obj.uploaded_at}}</p>
+        <a href="{% url 'view_file_delete' obj.id %}" class="btn btn-danger">Удалить</a>
+
+    </div><div class="features">
+
+    <h5>
+            Электронная почта: a624713@gmail.com
+        </h5>
+
+        <p>
+            Так же вы можете обратиться на нашу горячую линию
+            +7 (800) 800 80 80
+        </p>
+
+        </div>
+{% endblock %}

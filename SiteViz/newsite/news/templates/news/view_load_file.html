@@ -10,7 +10,6 @@
             <a color="№ffff00" href="{{ MEDIA_URL}}{{ obj.file }} ">{{ obj.title }}</a>
             {{ obj.file }}<br>
            <small>(Загружено в: {{ obj.uploaded_at }})</small>
-         <a href="{% url 'download_file' filename='test.txt' %}">Загрузить PDF</a>
 
 
         {% endfor %}

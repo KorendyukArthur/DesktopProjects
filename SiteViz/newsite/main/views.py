@@ -29,6 +29,13 @@ def main_company(request):
 def test_html(request):
     return render(request, 'main/test_html.html')
 
+def success(request):
+    return render(request, 'main/success.html')
+
+def success_chat(request):
+    return render(request, 'main/success_chat.html')
+
+
 def expindex(request):
     data = {
         "title": 'Главная страница!',

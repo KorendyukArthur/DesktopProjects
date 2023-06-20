@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}
+Новости на сайте
+{% endblock %}
+{% block content %}
+    <div class="features4">
+        <h1>Поздравляем вы успешно добавили документ!</h1>
+<img src="{% static 'main/img/dog_see.jpg' %}" alt="Альтернативный текст" width="500" height="300">
+        <p>Так же вы можете ознакомиться с другими документами профсоюзной организации.</p>
+                <div  justify-content="center" >
+                    <a href="{% url 'view_upload_file'  %}" class="btn btn-outline-primary">Перейти к документам</a>
+                </div>
+
+    </div>
+<div class="features">
+
+    <h5>
+            Электронная почта: a624713@gmail.com
+        </h5>
+
+        <p>
+            Так же вы можете обратиться на нашу горячую линию
+            +7 (800) 800 80 80
+        </p>
+
+        </div>
+{% endblock %}

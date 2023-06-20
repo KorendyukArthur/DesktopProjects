@@ -1,0 +1,16 @@
+{% extends 'main/layout.html'  %}
+
+{% block title %}
+Удаление документа
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Вы уверены что хотите удалить документ?</h1>
+        <form method="post">
+        {# коментарий для запуска передачи данных #}
+            {% csrf_token %}
+            <button class="btn btn-success" type="submit">Удалить документ</button>
+        </form>
+    </div>
+{% endblock %}

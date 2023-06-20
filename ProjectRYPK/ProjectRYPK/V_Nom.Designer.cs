@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.вывестиНазванияВсехТуровToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьТурToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -45,7 +43,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.ddToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -60,27 +57,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // вывестиНазванияВсехТуровToolStripMenuItem
-            // 
-            this.вывестиНазванияВсехТуровToolStripMenuItem.Name = "вывестиНазванияВсехТуровToolStripMenuItem";
-            this.вывестиНазванияВсехТуровToolStripMenuItem.Size = new System.Drawing.Size(445, 26);
-            this.вывестиНазванияВсехТуровToolStripMenuItem.Text = "Показать все доступные туры";
-            this.вывестиНазванияВсехТуровToolStripMenuItem.Click += new System.EventHandler(this.вывестиНазванияВсехТуровToolStripMenuItem_Click);
-            // 
-            // создатьТурToolStripMenuItem
-            // 
-            this.создатьТурToolStripMenuItem.Name = "создатьТурToolStripMenuItem";
-            this.создатьТурToolStripMenuItem.Size = new System.Drawing.Size(445, 26);
-            this.создатьТурToolStripMenuItem.Text = "Показать дополнительную информацию по турам";
-            this.создатьТурToolStripMenuItem.Click += new System.EventHandler(this.создатьТурToolStripMenuItem_Click);
             // 
             // textBox1
             // 
@@ -92,20 +73,20 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(59, 693);
+            this.label16.Location = new System.Drawing.Point(40, 693);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(172, 32);
+            this.label16.Size = new System.Drawing.Size(174, 32);
             this.label16.TabIndex = 52;
-            this.label16.Text = "Ввести код для удаления\r\n       тура или договора";
+            this.label16.Text = "Ввести код для удаления\r\n       путевки или договора";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(25, 347);
+            this.label15.Location = new System.Drawing.Point(12, 345);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(155, 16);
+            this.label15.Size = new System.Drawing.Size(178, 16);
             this.label15.TabIndex = 51;
-            this.label15.Text = "Ввести название тура";
+            this.label15.Text = "Ввести название путевки";
             // 
             // label14
             // 
@@ -119,20 +100,20 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1045, 709);
+            this.label13.Location = new System.Drawing.Point(1045, 693);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(187, 16);
+            this.label13.Size = new System.Drawing.Size(170, 32);
             this.label13.TabIndex = 49;
-            this.label13.Text = "Выбрать турагента по коду";
+            this.label13.Text = "Выбрать специалиста \r\nадминистратора по коду";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(844, 709);
+            this.label12.Location = new System.Drawing.Point(865, 693);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(173, 16);
+            this.label12.Size = new System.Drawing.Size(138, 32);
             this.label12.TabIndex = 48;
-            this.label12.Text = "Выбрать клиента по коду";
+            this.label12.Text = "Выбрать участника \r\nпрофсоюза по коду";
             // 
             // button9
             // 
@@ -156,9 +137,9 @@
             // 
             this.button8.Location = new System.Drawing.Point(1048, 758);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(179, 27);
+            this.button8.Size = new System.Drawing.Size(179, 45);
             this.button8.TabIndex = 45;
-            this.button8.Text = "Найти турагента";
+            this.button8.Text = "Найти специалиста администратора";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -174,9 +155,9 @@
             // 
             this.button7.Location = new System.Drawing.Point(847, 758);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(179, 27);
+            this.button7.Size = new System.Drawing.Size(179, 45);
             this.button7.TabIndex = 43;
-            this.button7.Text = "Найти клиента";
+            this.button7.Text = "Найти участника просоюза";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -217,15 +198,6 @@
             this.label11.TabIndex = 39;
             this.label11.Text = "Окно отображения информации";
             // 
-            // ddToolStripMenuItem
-            // 
-            this.ddToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.вывестиНазванияВсехТуровToolStripMenuItem,
-            this.создатьТурToolStripMenuItem});
-            this.ddToolStripMenuItem.Name = "ddToolStripMenuItem";
-            this.ddToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
-            this.ddToolStripMenuItem.Text = "Действия";
-            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(145, 756);
@@ -259,9 +231,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(264, 68);
+            this.groupBox1.Location = new System.Drawing.Point(204, 68);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1544, 622);
+            this.groupBox1.Size = new System.Drawing.Size(1604, 622);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -287,9 +259,8 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(1225, 18);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(14, 16);
+            this.label9.Size = new System.Drawing.Size(0, 16);
             this.label9.TabIndex = 20;
-            this.label9.Text = "1";
             // 
             // label8
             // 
@@ -355,17 +326,6 @@
             this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 12;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ddToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1853, 28);
-            this.menuStrip1.TabIndex = 38;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -380,7 +340,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(159, 69);
             this.button1.TabIndex = 33;
-            this.button1.Text = "Отобразить определнный тур";
+            this.button1.Text = "Отобразить определнную путевку";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -419,7 +379,6 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Name = "V_Nom";
@@ -428,17 +387,12 @@
             this.Load += new System.EventHandler(this.V_Nom_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStripMenuItem вывестиНазванияВсехТуровToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem создатьТурToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
@@ -454,7 +408,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ToolStripMenuItem ddToolStripMenuItem;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -469,7 +422,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button6;

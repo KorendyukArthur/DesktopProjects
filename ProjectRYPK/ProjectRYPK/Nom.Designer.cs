@@ -54,6 +54,8 @@
             this.dp3 = new System.Windows.Forms.ComboBox();
             this.dp1 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button3
@@ -89,9 +91,9 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(810, 97);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(174, 16);
+            this.label13.Size = new System.Drawing.Size(191, 16);
             this.label13.TabIndex = 91;
-            this.label13.Text = "Регистрация нового тура";
+            this.label13.Text = "Регистрация новой путевки";
             // 
             // button1
             // 
@@ -100,14 +102,14 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(170, 71);
             this.button1.TabIndex = 90;
-            this.button1.Text = "Регистрация нового тура в системе";
+            this.button1.Text = "Регистрация новой путевки в системе";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(632, 163);
+            this.label3.Location = new System.Drawing.Point(589, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 16);
             this.label3.TabIndex = 89;
@@ -123,7 +125,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(588, 218);
+            this.label12.Location = new System.Drawing.Point(585, 218);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(134, 16);
             this.label12.TabIndex = 87;
@@ -164,24 +166,24 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(587, 325);
+            this.label8.Location = new System.Drawing.Point(587, 317);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 16);
+            this.label8.Size = new System.Drawing.Size(104, 16);
             this.label8.TabIndex = 82;
-            this.label8.Text = "Дата прибытия";
+            this.label8.Text = "Дата закрытия";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(585, 274);
+            this.label7.Location = new System.Drawing.Point(585, 266);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 16);
+            this.label7.Size = new System.Drawing.Size(103, 16);
             this.label7.TabIndex = 81;
-            this.label7.Text = "Дата отправления";
+            this.label7.Text = "Дата открытия";
             // 
             // p5
             // 
-            this.p5.Location = new System.Drawing.Point(613, 346);
+            this.p5.Location = new System.Drawing.Point(613, 338);
             this.p5.Name = "p5";
             this.p5.Size = new System.Drawing.Size(200, 22);
             this.p5.TabIndex = 80;
@@ -189,7 +191,7 @@
             // p4
             // 
             this.p4.CalendarTitleForeColor = System.Drawing.Color.Turquoise;
-            this.p4.Location = new System.Drawing.Point(613, 293);
+            this.p4.Location = new System.Drawing.Point(613, 285);
             this.p4.Name = "p4";
             this.p4.Size = new System.Drawing.Size(200, 22);
             this.p4.TabIndex = 79;
@@ -278,12 +280,30 @@
             this.button4.TabIndex = 95;
             this.button4.UseVisualStyleBackColor = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(613, 396);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 22);
+            this.textBox1.TabIndex = 96;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(587, 377);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(142, 16);
+            this.label4.TabIndex = 97;
+            this.label4.Text = "Количество путевок";
+            // 
             // Nom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.ClientSize = new System.Drawing.Size(1798, 582);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -347,5 +367,7 @@
         private System.Windows.Forms.ComboBox dp3;
         private System.Windows.Forms.ComboBox dp1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
     }
 }

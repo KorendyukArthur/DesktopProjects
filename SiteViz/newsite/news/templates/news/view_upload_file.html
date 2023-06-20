@@ -4,12 +4,20 @@
 {% block content %}
 {% csrf_token %}
      <div class="features">
-<p>Загруженные файлы:</p>
+<h3>Документы профсоюзной организации:</h3>
           {% csrf_token %}
         {% for obj in documents %}
-            <a color="№ffff00" href="media/{{ obj.file }}"  download="{{ obj.file }}" >{{ obj.title }}</a><br>
+         <p>Описание файла</p>
+            {{ obj.title }}
+         <p>Ссылка для загрузки</p>
+            <a color="№ffff00" href="media/{{ obj.file }}"  download="{{ obj.file }}" >Загрузить</a><br>
 
-           <small>(Загружено в: {{ obj.uploaded_at }})</small>
+           <small>(Загружено : {{ obj.uploaded_at }})</small><br>
+         {% if user.is_superuser %}
+         <a href="{% url 'file_detail' obj.id %}" class="btn btn-warning">Удалить документ</a><br>
+         {% else %}
+         <p> </p><br>
+         {% endif %}
         {% endfor %}
 
      </div>

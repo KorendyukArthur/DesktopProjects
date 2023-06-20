@@ -85,7 +85,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(138, 42);
             this.button4.TabIndex = 78;
-            this.button4.Text = "Удалить клиента по фамилии";
+            this.button4.Text = "Удалить участника профсоюза по фамилии";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -100,7 +100,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1067, 38);
+            this.label13.Location = new System.Drawing.Point(1080, 38);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(0, 16);
             this.label13.TabIndex = 38;
@@ -108,7 +108,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(957, 38);
+            this.label9.Location = new System.Drawing.Point(971, 38);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 16);
             this.label9.TabIndex = 11;
@@ -116,7 +116,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(839, 38);
+            this.label8.Location = new System.Drawing.Point(857, 38);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 16);
             this.label8.TabIndex = 10;
@@ -124,7 +124,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(729, 38);
+            this.label7.Location = new System.Drawing.Point(744, 38);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(0, 16);
             this.label7.TabIndex = 9;
@@ -132,7 +132,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(378, 38);
+            this.label4.Location = new System.Drawing.Point(382, 38);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 16);
             this.label4.TabIndex = 8;
@@ -140,7 +140,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(608, 38);
+            this.label6.Location = new System.Drawing.Point(629, 38);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(0, 16);
             this.label6.TabIndex = 6;
@@ -178,7 +178,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(491, 38);
+            this.label5.Location = new System.Drawing.Point(501, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 16);
             this.label5.TabIndex = 7;
@@ -258,11 +258,11 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Peru;
-            this.button1.Location = new System.Drawing.Point(51, 299);
+            this.button1.Location = new System.Drawing.Point(51, 282);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 52);
+            this.button1.Size = new System.Drawing.Size(145, 69);
             this.button1.TabIndex = 70;
-            this.button1.Text = "Информация по клиентам";
+            this.button1.Text = "Информация по участникам профсоюза";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

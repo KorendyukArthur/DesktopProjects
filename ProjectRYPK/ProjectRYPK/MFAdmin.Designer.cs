@@ -87,7 +87,7 @@
             // 
             this.button8.Location = new System.Drawing.Point(830, 395);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(190, 43);
+            this.button8.Size = new System.Drawing.Size(190, 52);
             this.button8.TabIndex = 43;
             this.button8.Text = "Действие с данными ";
             this.button8.UseVisualStyleBackColor = true;
@@ -99,7 +99,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(186, 51);
             this.button3.TabIndex = 42;
-            this.button3.Text = "Регистрация сотрудника - агента";
+            this.button3.Text = "Регистрация специалиста администратора";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 

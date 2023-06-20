@@ -1,0 +1,34 @@
+{% extends 'main/layout.html'  %}
+
+{% block title %}
+Регистрация в профсоюз
+{% endblock %}
+
+{% block content %}
+    <div class="features7">
+        <h1>Форма для вступления в профсоюз</h1>
+<p>Не являясь членом профсоюза – работник рискует остаться один на один с работодателем! Профсоюз оказывает неоценимую помощь и работодателю - укрепляет производственную дисциплину и контролирует условия труда и отдыха коллектива, что существенно уменьшает риск получения травм или гибели рабочего.</p>   <form method="post">
+        {# коментарий для запуска передачи данных #}
+            {% csrf_token %}
+<p>Введите все необходимые данные для отправления заявки</p>
+            {{ form.last_name }}<br>
+
+            {{ form.first_name }}<br>
+            {{ form.father_name_user_ap }}<br>
+            {{ form.job_title }}<br>
+            {{ form.number_phone }}<br>
+
+            <span> {{error}} </span>
+            <button class="btn btn-success" type="submit">Отправить заявку</button>
+        </form>
+    </div>
+        <button
+             class="btn btn-warning"> о сайте
+        </button>
+
+    </div>
+{% endblock %}
+
+
+
+

@@ -28,14 +28,14 @@ namespace ProjectRYPK
         {
 
             
-            if (dp1.Text != "" && dp2.Text != "" && dp3.Text != "" && dp4.Text != "" && dp5.Text != "" && dp6.Text != "" && p1.Text != "" && p3.Text != "" )
+            if (dp1.Text != "" && dp2.Text != "" && dp3.Text != "" && dp4.Text != "" && dp5.Text != "" && dp6.Text != "" && p1.Text != "" && p3.Text != "" && textBox1.Text != "" )
             {
                 
                     List<string> insertion_Customers1 = SQLRequests.SelectRequest(
-            "INSERT INTO ДанныеПутевок2_old1 (СтранаПутевки, ТипОтеля, ТипНомера, Город, Улица, НазваниеОтеля) VALUES (@dp1, @dp2, @dp3, @dp4, @dp5, @dp6)", new string[] { "dp1", "dp2", "dp3", "dp4", "dp5", "dp6" }, new string[] { dp1.Text, dp2.Text, dp3.Text, dp4.Text, dp5.Text, dp6.Text });
+                "INSERT INTO ДанныеПутевок2_old1 (СтранаПутевки, ТипОтеля, ТипНомера, Город, Улица, НазваниеОтеля) VALUES (@dp1, @dp2, @dp3, @dp4, @dp5, @dp6)", new string[] { "dp1", "dp2", "dp3", "dp4", "dp5", "dp6" }, new string[] { dp1.Text, dp2.Text, dp3.Text, dp4.Text, dp5.Text, dp6.Text });
 
                 List<string> insertion_Customers = SQLRequests.SelectRequest(
-                "INSERT INTO Путевки2_old (НаименованиеПутевки,ЦенаПутевки, ДатаНачала, ДатаОкончания) VALUES (@v1, @v2, @v3, @v4 )", new string[] { "v1", "v2", "v3", "v4" }, new string[] { p1.Text, p3.Text, p4.Text, p5.Text });
+                "INSERT INTO Путевки2_old (НаименованиеПутевки,ЦенаПутевки, ДатаНачала, ДатаОкончания,КоличествоПутевок) VALUES (@v1, @v2, @v3, @v4, @v5 )", new string[] { "v1", "v2", "v3", "v4", "v5" }, new string[] { p1.Text, p3.Text, p4.Text, p5.Text, textBox1.Text });
 
 
 

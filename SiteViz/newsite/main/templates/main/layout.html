@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title> {% block title %}{% endblock %}  </title>
@@ -85,32 +85,52 @@
       <img alt="Лого" src="{% static 'main/img/lable_chd.jpg' %}">
 
 <span class="logo" ></span>
+      {% if user.is_authenticated %}
             <a href="{% url 'home'%}"><li><i class="fa-solid fa-house"></i>Главная страница</li></a>
-            <a href="{% url 'about'%}"><li><i class="fa-solid fa-car"></i>Информация о компании</li></a>
+            <a href="{% url 'about'%}"><li><i class="fa-solid fa-car"></i>О компании</li></a>
             <a href="{% url 'contact'%}"><li><i class="fa-solid fa-gears"></i>Контакты</li></a>
-            <a href="{% url 'main_price'%}"><li><i class="fa-solid fa-house"></i>Цены для профсоюза</li></a>
+            <a href="{% url 'main_price'%}"><li><i class="fa-solid fa-house"></i>Цены </li></a>
             <a href="{% url 'news_home'%}"><li><i class="fa-solid fa-house"></i>Новостная колонка</li></a>
-
-
+            <a href="{% url 'view_upload_file'%}"><li><i class="fa-solid fa-house"></i>Документы профсоюза</li></a>
+      {% else %}
+            <a href="{% url 'home'%}"><li><i class="fa-solid fa-house"></i>Главная страница</li></a>
+            <a href="{% url 'about'%}"><li><i class="fa-solid fa-car"></i>О компании</li></a>
+            <a href="{% url 'contact'%}"><li><i class="fa-solid fa-gears"></i>Контакты</li></a>
+            <a href="{% url 'news_home'%}"><li><i class="fa-solid fa-house"></i>Новостная колонка</li></a>
+            <a href="{% url 'register_prof' %}"><li><i class="fa-solid fa-house"></i>Вступить в профсоюз</li></a>
+      {% endif %}
         </ul>
     </ul>
      <div>
-            <div class="navbar-nav1">
+            <div class="features6">
+
               {% if user.is_authenticated %}
+                {% if user.is_superuser %}
+
                 <a class="btn btn-light btn-sm" href="{% url 'profile' %}">Профиль</a>
+
+
                 <a class="btn btn-light btn-sm" href="{% url 'logout' %}">Выход</a>
+
                 <a class="btn btn-danger btn-sm" href="{% url 'layout_admin' %}">Вход в админ панель</a>
-                <a class="btn btn-danger btn-sm" href="{% url 'createchat' %}">Написать сообщение по поводу путевки</a>
-                <a class="btn btn-danger btn-sm" href="{% url 'createchatprivate' %}">Написать в чат </a>
-                <a class="btn btn-danger btn-sm" href="{% url 'dialogchat' %}">Написать в админ - чат </a>
+                <a class="btn btn-danger btn-sm" href="{% url 'dialogchat' %}">Чат администратора </a>
+                <a class="btn btn-outline-success btn-sm " href="{% url 'create_bron' %}">Оформить регистрацию путевки</a>
+                {% else %}
+                 <a class="btn btn-dark btn-sm" href="{% url 'profile' %}">Профиль</a>
+                <a class="btn btn-dark btn-sm" href="{% url 'logout' %}">Выход</a>
+
+                <a class="btn btn-outline-info btn-sm" href="{% url 'createchat' %}">Написать сообщение по поводу путевки</a>
+                <a class="btn btn-outline-info btn-sm" href="{% url 'createchatprivate' %}">Написать в чат </a>
                 <a class="btn btn-outline-success btn-sm " href="{% url 'create_bron' %}">Оформить регистрацию путевки</a>
 
+                {% endif %}
               {% else %}
-                <a class="btn btn-light" href="{% url 'login' %}">Вход</a>
+                <a class="btn btn-light " href="{% url 'login' %}">Вход</a>
 
               {% endif %}
             </div>
      </div>
+         </div>
 </div>
 
     <main>

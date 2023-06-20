@@ -2,11 +2,17 @@
 {% load static %}
 
 {% block content %}
-  <form method="post" enctype="multipart/form-data">
+<div class="features7">
+   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Upload</button>
+         <h3>Для загрузки файла необходимо ввести название и загрузить файл</h3>
+       <a>Введите новое название загружаемого файла </a>
+    {{ form.title }}<br>
+     {{ form.file }}<br>
+    <button type="submit">Загрузить файл</button>
   </form>
+</div>
+
 
   <p><a href="{% url 'view_upload_file' %}">Просмотреть все файлы</a></p>
 

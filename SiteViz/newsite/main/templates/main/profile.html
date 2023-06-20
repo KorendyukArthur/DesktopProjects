@@ -1,5 +1,8 @@
 {% extends 'main/layout.html'  %}
 {% load crispy_forms_tags %}
+{% block title %}
+ Профиль
+{% endblock %}
 {% block content %}
     <div class="content-section">
       <div class="media">
@@ -12,10 +15,5 @@
 
         </div>
       </div>
-      <div class="border-top pt-3">
-            <small class="text-muted">
-                Нужен аккаунт? <a class="btn btn-warning" href="{% url 'home' %}">выход</a>
-            </small>
-        </div>
     </div>
 {% endblock content %}

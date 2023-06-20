@@ -1,4 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
+using Org.BouncyCastle.Crypto.Engines;
+using Org.BouncyCastle.Math.EC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,8 +9,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
+using System.Windows.Shell;
 
 namespace ProjectRYPK
 {
@@ -20,7 +26,7 @@ namespace ProjectRYPK
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (comboBox1.Text != "" && comboBox4.Text != "" && comboBox5.Text != "")
+            if (comboBox1.Text != "" && comboBox4.Text != "" && comboBox5.Text != "" && dateTimePicker1.Text != "" && dateTimePicker2.Text != "" && dateTimePicker3.Text != "")
             {
                 List<string> idfamil = SQLRequests.SelectRequest(
              "select КодКлиента from ИКлиент where Фамилия = @pass",
@@ -34,10 +40,39 @@ namespace ProjectRYPK
 
                 string b = idturs[0];
 
+
+                List<string> kolvo_put = SQLRequests.SelectRequest(
+                "select КоличествоПутевок from Путевки2_old where НаименованиеПутевки = @nam",
+                new string[] { "nam" }, new string[] { comboBox4.Text });
+                
+                string c = kolvo_put[0];
+
+                int kolvo_min = Convert.ToInt32(c);
+                int kl = kolvo_min - 1;
+                kolvo_put[0] = Convert.ToString(kl);
+
+                if (kolvo_put.Count <= 0)
+                {
+                    MessageBox.Show("Путевок на данный тур нет");
+                }
+
+                else
+                {
+                    List<string> insertion_Customers5 = SQLRequests.SelectRequest(
+
+                        "UPDATE Путевки2_old SET КоличествоПутевок = @p WHERE Путевки2_old.НаименованиеПутевки = @id", new string[] { "p", "id" }, new string[] { kolvo_put[0], comboBox4.Text });
+
+
+                }
+
+                
+
+
                 List<string> insertion_Customers = SQLRequests.SelectRequest(
-                 "INSERT INTO Договор (КодАгента, КодКлиента, КодПутевки, Оплата, ДатаОформления) VALUES (@w1, @w2, @w3, @w4, @w5)",
-                 new string[] { "w1", "w2", "w3", "w4", "w5" }, new string[] { NomClass.id, a, b, comboBox5.Text, dateTimePicker1.Text });
+                 "INSERT INTO Договор (КодАгента, КодКлиента, КодПутевки, Оплата, ДатаОформления,ДатаЗаезда,ДатаВыезда,КоличествоДней,ОбщаяСтоимость) VALUES (@w1, @w2, @w3, @w4, @w5, @w6, @w7,@w8,@w9)",
+                 new string[] { "w1", "w2", "w3", "w4", "w5", "w6", "w7", "w8", "w9" }, new string[] { NomClass.id, a, b, comboBox5.Text, dateTimePicker1.Text , dateTimePicker2.Text, dateTimePicker3.Text,textBox1.Text,textBox2.Text });
                 MessageBox.Show("Регистрация прошла успешно");
+
             }
             else
             {
@@ -187,7 +222,7 @@ namespace ProjectRYPK
                 l3.Text += idfamil3[i] + "\n";
             }
 
-
+            
             l4.Text = "Дата окончания" + "\n";
             List<string> idfamil4 = SQLRequests.SelectRequest(
              "select  ДатаОкончания FROM Путевки2_old, ДанныеПутевок2_old1 WHERE Путевки2_old.КодПутевки = ДанныеПутевок2_old1.КодПутевки",
@@ -242,6 +277,21 @@ namespace ProjectRYPK
             {
                 l8.Text += idfamil10[i] + "\n";
             }
+
+
+            label18.Text = "Количество путевок" + "\n";
+            List<string> idfamil11 = SQLRequests.SelectRequest(
+             "select  КоличествоПутевок FROM Путевки2_old, ДанныеПутевок2_old1 WHERE Путевки2_old.КодПутевки = ДанныеПутевок2_old1.КодПутевки",
+             new string[] { }, new string[] { });
+
+
+            for (int i = 0; i < idfamil11.Count; i++)
+            {
+                label18.Text += idfamil11[i] + "\n";
+            }
+
+
+
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -264,7 +314,7 @@ namespace ProjectRYPK
             // устанавливаем соединение с БД
             conn.Open();
             // запрос
-            string sql = "SELECT name_tur,surname_user,name_user,surname_2_user,number_user,date_z,date_v,number_human,date_message FROM databasenew.news_chatbron";
+            string sql = "SELECT name_tur,surname_user,name_user,surname_2_user,number_user,date_z,date_v,number_human,date_message FROM databasenew.news_chatbron order by -date_message ";
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(sql, conn);
             // объект для чтения ответа сервера
@@ -282,5 +332,131 @@ namespace ProjectRYPK
             // закрываем соединение с БД
             conn.Close();
         }
+
+        int mm1;
+        int yy1;
+
+        string y1;
+        string d1;
+        string m1;
+
+        string d2;
+        string m2;
+
+        string maxdat;
+
+        
+        int idturs1;
+        //comboBox1.Text != "" && comboBox4.Text != "" && comboBox5.Text != "" && dateTimePicker1.Text != "" && dateTimePicker2.Text != "" && dateTimePicker3.Text != ""
+        private void button19_Click(object sender, EventArgs e)
+        {
+            
+
+            if (comboBox4.Text != "" && dateTimePicker2.Text != "" && dateTimePicker3.Text != "")
+            {
+                button1.Visible = true;
+
+                d1 = dateTimePicker2.Value.Date.Day.ToString();
+                m1 = dateTimePicker2.Value.Date.Month.ToString();
+                y1 = dateTimePicker2.Value.Date.Year.ToString();
+
+
+                d2 = dateTimePicker3.Value.Date.Day.ToString();
+                m2 = dateTimePicker3.Value.Date.Month.ToString();
+
+
+                mm1 = Convert.ToInt32(m1);
+                int Feb = mm1;
+
+                yy1 = Convert.ToInt32(y1);
+                int yeas = yy1;
+
+                int daysInJuly = System.DateTime.DaysInMonth(yeas, Feb);
+                string das = Convert.ToString(daysInJuly);
+
+                int das1 = Convert.ToInt32(das);
+
+                int dint1 = Convert.ToInt32(d1);
+                int mint1 = Convert.ToInt32(m1);
+
+                int dint2 = Convert.ToInt32(d2);
+                int mint2 = Convert.ToInt32(m2);
+
+
+
+
+
+                if (mint1 <= mint2)
+                {
+                    if (mint2 > mint1)
+                    {
+                        int result = das1 - dint1 + dint2;
+                        textBox1.Text = Convert.ToString(result);
+
+
+                        List<string> idturs = SQLRequests.SelectRequest(
+                        "select ЦенаПутевки from Путевки2_old where НаименованиеПутевки = @nam",
+                            new string[] { "nam" }, new string[] { comboBox4.Text });
+
+                        for (int i = 0; i < idturs.Count; i++)
+                        {
+                            textBox2.Text += idturs[i] + "\n";
+                            idturs1 = Convert.ToInt32(idturs[0]);
+
+                            int resultobsh = result * idturs1;
+       
+                            textBox2.Text = Convert.ToString(resultobsh);
+
+                        }
+
+                    }
+
+                    else
+                    {
+                        int result = dint2 - dint1;
+                        textBox1.Text = Convert.ToString(result);
+                        
+                        List<string> idturs = SQLRequests.SelectRequest(
+                       "select ЦенаПутевки from Путевки2_old where НаименованиеПутевки = @nam",
+                           new string[] { "nam" }, new string[] { comboBox4.Text });
+
+                        for (int i = 0; i < idturs.Count; i++)
+                        {
+                            textBox2.Text += idturs[i] + "\n";
+                            idturs1 = Convert.ToInt32(idturs[0]);
+
+                            int resultobsh = result * idturs1;
+
+                            textBox2.Text = Convert.ToString(resultobsh);
+
+                        }
+
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Данные даты введены неправильно!");
+                }
+                
+                
+                
+               
+
+
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Введите название путевки! ");
+
+            }
+        }
+            
+
+
+        }
     }
-}
+

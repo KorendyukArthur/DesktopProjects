@@ -86,5 +86,18 @@ namespace ProjectRYPK
             opn7.ShowDialog();
             this.Show();
         }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            DataA opn11 = new DataA();
+            this.Hide();
+            opn11.ShowDialog();
+            this.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

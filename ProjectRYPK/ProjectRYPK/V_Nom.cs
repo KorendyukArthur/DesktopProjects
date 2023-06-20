@@ -204,6 +204,9 @@ namespace ProjectRYPK
 
         private void button2_Click(object sender, EventArgs e)
         {
+            label1.Text = " "; label2.Text = " "; label3.Text = " "; label4.Text = " ";
+            label5.Text = " "; label6.Text = " "; label7.Text = " "; label8.Text = " ";
+            label9.Text = " "; label10.Text = " "; label17.Text = " ";
 
             label1.Text = "Номер договора" + "\n";
             List<string> idfamil = SQLRequests.SelectRequest(
@@ -293,79 +296,157 @@ namespace ProjectRYPK
                 List<string> idfamil1 = SQLRequests.SelectRequest(
                  "select Фамилия from  ИКлиент WHERE ИКлиент.КодКлиента  = @pass1",
                  new string[] { "pass1" }, new string[] { a });
-
-                label1.Text += idfamil1[0] + "\n";
-
+                if (idfamil1.Count == 0)
+                {
+                    MessageBox.Show("Данных нет в базе");
+                    return;
+                }
+                else
+                {
+                    label1.Text += idfamil1[0] + "\n";
+                }
+                
 
 
                 label2.Text = "Имя клиента" + "\n";
                 List<string> idfamil2 = SQLRequests.SelectRequest(
                  "select Имя from  ИКлиент WHERE ИКлиент.КодКлиента  = @pass2",
                  new string[] { "pass2" }, new string[] { a });
-
-                label2.Text += idfamil2[0] + "\n";
-
+                if (idfamil2.Count == 0)
+                {
+                    MessageBox.Show("Данных нет в базе");
+                    return;
+                }
+                else
+                {
+                    label2.Text += idfamil2[0] + "\n";
+                }
+                
                 label3.Text = "Отчество" + "\n";
                 List<string> idfamil3 = SQLRequests.SelectRequest(
                  "select Отчество from  ИКлиент WHERE ИКлиент.КодКлиента  = @pass3",
                  new string[] { "pass3" }, new string[] { a });
-
-                label3.Text += idfamil3[0] + "\n";
+                if (idfamil3.Count == 0)
+                {
+                    MessageBox.Show("Данных нет в базе");
+                    return;
+                }
+                else
+                {
+                    label3.Text += idfamil3[0] + "\n";
+                }
+                
 
                 label17.Text = "Возраст" + "\n";
                 List<string> idfamil17 = SQLRequests.SelectRequest(
                  "select Отчество from  ИКлиент WHERE ИКлиент.КодКлиента  = @pass13",
                  new string[] { "pass13" }, new string[] { a });
-
-                label17.Text += idfamil17[0] + "\n";
+                if (idfamil17.Count == 0)
+                {
+                    MessageBox.Show("Данных нет в базе");
+                    return;
+                }
+                else
+                {
+                    label17.Text += idfamil17[0] + "\n";
+                }
+                
 
 
                 label4.Text = "ИНН клиента" + "\n";
                 List<string> idfamil4 = SQLRequests.SelectRequest(
                  "select  ИННКлиента from  Данные_клиента WHERE Данные_клиента.КодКлиента = @pass4",
                  new string[] { "pass4" }, new string[] { a });
-
-                label4.Text += idfamil4[0] + "\n";
+                if (idfamil4.Count == 0)
+                {
+                    MessageBox.Show("Данных нет в базе");
+                    return;
+                }
+                else
+                {
+                    label4.Text += idfamil4[0] + "\n";
+                }
+                
 
 
                 label5.Text = "Номер телефона" + "\n";
                 List<string> idfamil5 = SQLRequests.SelectRequest(
                  "select  НомерТелефона from  Данные_клиента WHERE Данные_клиента.КодКлиента = @pass5",
                  new string[] { "pass5" }, new string[] { a });
-
-                label5.Text += idfamil5[0] + "\n";
+                if (idfamil5.Count == 0)
+                {
+                    MessageBox.Show("Данных нет в базе");
+                    return;
+                }
+                else
+                {
+                    label5.Text += idfamil5[0] + "\n";
+                }
+                
 
 
                 label6.Text = "Адрес" + "\n";
                 List<string> idfamil6 = SQLRequests.SelectRequest(
                  "select  Адрес from  Данные_клиента WHERE Данные_клиента.КодКлиента = @pass6",
                  new string[] { "pass6" }, new string[] { a });
-
-                label6.Text += idfamil6[0] + "\n";
+                if (idfamil6.Count == 0)
+                {
+                    MessageBox.Show("Данных нет в базе");
+                    return;
+                }
+                else
+                {
+                    label6.Text += idfamil6[0] + "\n";
+                }
+                
 
 
                 label7.Text = "Данные паспорта" + "\n";
                 List<string> idfamil7 = SQLRequests.SelectRequest(
                  "select ДанныеПаспорта from  Данные_клиента WHERE Данные_клиента.КодКлиента = @pass7",
                  new string[] { "pass7" }, new string[] { a });
-
-                label7.Text += idfamil7[0] + "\n";
+                if (idfamil7.Count == 0)
+                {
+                    MessageBox.Show("Данных нет в базе");
+                    return;
+                }
+                else
+                {
+                    label7.Text += idfamil7[0] + "\n";
+                }
+                
 
 
                 label8.Text = "Данные загранпаспорта" + "\n";
                 List<string> idfamil8 = SQLRequests.SelectRequest(
                  "select ДанныеЗагранпаспорта from  Данные_клиента WHERE Данные_клиента.КодКлиента = @pass8",
                  new string[] { "pass8" }, new string[] { a });
-
-                label8.Text += idfamil8[0] + "\n";
+                if (idfamil8.Count == 0)
+                {
+                    MessageBox.Show("Данных нет в базе");
+                    return;
+                }
+                else
+                {
+                    label8.Text += idfamil8[0] + "\n";
+                }
+                
 
 
                 label9.Text = "Почта" + "\n";
                 List<string> idfamil9 = SQLRequests.SelectRequest(
                  "select Почта from  Данные_клиента WHERE Данные_клиента.КодКлиента = @pass9",
                  new string[] { "pass9" }, new string[] { a });
-
-                label9.Text += idfamil9[0] + "\n";
+                if (idfamil9.Count == 0)
+                {
+                    MessageBox.Show("Данных нет в базе");
+                    return;
+                }
+                else
+                {
+                    label9.Text += idfamil9[0] + "\n";
+                }
+                
             }
             else
             {
@@ -705,6 +786,18 @@ namespace ProjectRYPK
             {
                 label8.Text += idfamil10[i] + "\n";
             }
+
+            label9.Text = "Количество путевок" + "\n";
+            List<string> idfamil11 = SQLRequests.SelectRequest(
+             "select  КоличествоПутевок FROM Путевки2_old, ДанныеПутевок2_old1 WHERE Путевки2_old.КодПутевки = ДанныеПутевок2_old1.КодПутевки",
+             new string[] { }, new string[] { });
+
+
+            for (int i = 0; i < idfamil11.Count; i++)
+            {
+                label9.Text += idfamil11[i] + "\n";
+            }
+
         }
     }
 }

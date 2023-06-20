@@ -1,11 +1,17 @@
-body { background-image: url( ../img/bf_1.jpg );
+body { background-image: url( ../img/f3.jpg );
     background-attachment: fixed
 }
 
+.blockaa
+{
+margin-left: 500px;
+    margin-right: auto;
+    width: 6em
+}
 
 main .features{
     float: right;
-    color: #fff;
+    color: #000000;
     margin-top: 100px;
     text-align: center;
     width: 100%;
@@ -24,10 +30,29 @@ main .features4{
     margin:auto
 }
 main .features5{
+
     text-align: center;
     color: #fff;
     margin: 5px 100px auto 20px
 }
+
+.features6{
+    float: none;
+    text-align: center;
+    color: #fff;
+    margin: 50px 100px auto 100px
+}
+
+.features7{
+    float: right;
+    color: #000000;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+
 
 main .features1{
 
@@ -49,6 +74,22 @@ main .features p {max-width: 700px; margin: auto}
     clear: both;
     width: 400px;
     margin: 20px 34%;
+    text-align: left;
+}
+
+.alert-primary{
+   float: top;
+    clear: both;
+    width: 900px;
+    margin: 20px 20%;
+    text-align: left;
+}
+
+.alert-light{
+   float: top;
+    clear: both;
+    width: 900px;
+    margin: 20px 20%;
     text-align: left;
 }
 
@@ -107,12 +148,17 @@ form {
 
 
 
+
 #navbar1 li {
   float: top;
   position: center;
   height: 100%;
+  margin-left: auto;
+margin-right: auto;
+
 }
 #navbar1 li a {
+  position: center;
   display: block;
   padding: 6px;
   width: 100px;
@@ -182,7 +228,7 @@ form {
     margin: top;
     float: top;
     width: 50%;
-    color: white;
+    color: #000000;
     transition: 1s;
 }
 
@@ -235,7 +281,7 @@ width: 200px;
      margin: top;
     float: top;
     width: 33%;
-    color: white;
+    color: #000000;
     transition: 1s;
 }
 
@@ -249,7 +295,7 @@ width: 200px;
      margin: top;
     float: top;
     width: 33%;
-    color: white;
+    color: #000000;
     transition: 1s;
 }
 
@@ -290,7 +336,7 @@ width: 200px;
 }
 
 .color-text1{
-    color: white;
+    color: #000000;
     text-indent: 2em;
     text-align: justify;
     padding: 20px 100px 15px 100px;
@@ -385,4 +431,9 @@ display:block;
 width:100%;
 max-width:100%;
 height:auto;
+}
+
+
+.line {
+border-bottom: 50px solid #000; /* Параметры линии */
 }

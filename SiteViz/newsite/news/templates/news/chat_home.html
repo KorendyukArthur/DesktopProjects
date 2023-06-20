@@ -6,6 +6,7 @@
 {% block content %}
     <div class="features">
         <h1>Сообщения пользователей</h1>
+        {% csrf_token %}
         {% if news %}
             {% for form in news %}
                 <div class="alert alert-warning">

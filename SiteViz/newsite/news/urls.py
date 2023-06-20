@@ -30,7 +30,6 @@ urlpatterns = [
     path('<int:pk>',views.layout_news_admin, name='layout_news_admin'),
     path('successful_registration',views.successful_registration, name ='successful_registration'),
 
-
     path('createchatprivate', views.create_chat_private, name='createchatprivate'),
     path('dialogchat', views.dialogchat, name='dialogchat'),
 
@@ -42,6 +41,16 @@ urlpatterns = [
     path('upload_file', views.model_form_upload, name='upload_file'),
     path('view_upload_file', views.view_upload_file, name='view_upload_file'),
     path('view_load_file', views.download_file, name='view_load_file'),
+
+
+    path('/file_detail/<int:pk>', views.FileDetailView.as_view(), name='file_detail'),
+    path('file_detail/<int:pk>/delete', views.FileDeleteView.as_view(), name='view_file_delete'),
+    path('success_up',views.success_up, name ='success_up'),
+    path('success_upload',views.success_upload, name ='success_upload'),
+    path('register_prof',views.register_prof, name='register_prof')
+
+
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -32,7 +32,7 @@ namespace ProjectRYPK
             // устанавливаем соединение с БД
             conn.Open();
             // запрос
-            string sql = "SELECT id_user,min_text,full_text,date FROM databasenew.news_chat";
+            string sql = "SELECT id_user,min_text,full_text,date FROM databasenew.news_chat order by -date";
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(sql, conn);
             // объект для чтения ответа сервера
@@ -86,6 +86,11 @@ namespace ProjectRYPK
             {
                 MessageBox.Show("Данные не найдены");
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

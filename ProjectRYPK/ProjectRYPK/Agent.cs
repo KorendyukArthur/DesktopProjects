@@ -115,7 +115,7 @@ namespace ProjectRYPK
             List<string> idfamil1 = SQLRequests.SelectRequest(
            "SELECT Агент.Фамилия FROM  Агент ",
            new string[] { }, new string[] { });
-            labels1.Text = "Фамилия Агент" + "\n";
+            labels1.Text = "Фамилия Агента" + "\n";
             for (int i = 0; i < idfamil1.Count; i++)
             {
                 labels1.Text += idfamil1[i] + "\n";
@@ -132,7 +132,7 @@ namespace ProjectRYPK
 
 
             List<string> idfamil2 = SQLRequests.SelectRequest(
-           "SELECT ДанныеАгента.Должность FROM  ДанныеАгента1_old left join  Агент on Агент.КодАгента = ДанныеАгента1_old.КодАгента",
+           "SELECT ДанныеАгента1_old.Должность FROM  ДанныеАгента1_old right join  Агент on Агент.КодАгента = ДанныеАгента1_old.КодАгента",
            new string[] { }, new string[] { });
             labels3.Text = "Должность" + "\n";
             for (int i = 0; i < idfamil2.Count; i++)
@@ -141,7 +141,7 @@ namespace ProjectRYPK
             }
 
             List<string> idfamil4 = SQLRequests.SelectRequest(
-           "SELECT ДанныеАгента.НомерТелефона FROM  ДанныеАгента1_old left join  Агент on Агент.КодАгента = ДанныеАгента1_old.КодАгента",
+           "SELECT ДанныеАгента1_old.НомерТелефона FROM  ДанныеАгента1_old right join  Агент on Агент.КодАгента = ДанныеАгента1_old.КодАгента",
            new string[] { }, new string[] { });
             labels4.Text = "Номер телефона" + "\n";
             for (int i = 0; i < idfamil4.Count; i++)

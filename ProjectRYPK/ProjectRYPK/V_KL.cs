@@ -19,8 +19,12 @@ namespace ProjectRYPK
 
         private void button2_Click(object sender, EventArgs e)
         {
+            label1.Text = " "; label2.Text = " "; label3.Text = " "; label4.Text = " ";
+            label5.Text = " "; label6.Text = " "; label7.Text = " "; label8.Text = " ";
+            label9.Text = " "; label10.Text = " "; label11.Text = " "; label12.Text = " "; label13.Text = " ";
+
             List<string> idfamil = SQLRequests.SelectRequest(
-           "SELECT Путевки2_old.НаименованиеПутевки FROM  Путевки2_old left join  Договор on Договор.КодПутевки = Путевки2_old.КодПутевки left join ИКлиент on ИКлиент.КодКлиента = Договор.КодКлиента",
+           "SELECT Путевки2_old.НаименованиеПутевки FROM  Путевки2_old right join  Договор on Договор.КодПутевки = Путевки2_old.КодПутевки left join ИКлиент on ИКлиент.КодКлиента = Договор.КодКлиента",
            new string[] { }, new string[] { });
             label1.Text = "Наименование путевки" + "\n";
             for (int i = 0; i < idfamil.Count; i++)
@@ -30,7 +34,7 @@ namespace ProjectRYPK
 
 
             List<string> idfamil1 = SQLRequests.SelectRequest(
-           "SELECT ИКлиент.Фамилия FROM  Путевки2_old left join  Договор on Договор.КодПутевки = Путевки2_old.КодПутевки left join ИКлиент on ИКлиент.КодКлиента = Договор.КодКлиента",
+           "SELECT ИКлиент.Фамилия FROM  Путевки2_old right join  Договор on Договор.КодПутевки = Путевки2_old.КодПутевки left join ИКлиент on ИКлиент.КодКлиента = Договор.КодКлиента",
            new string[] { }, new string[] { });
             label2.Text = "Фамилия клиента" + "\n";
             for (int i = 0; i < idfamil1.Count; i++)
@@ -39,7 +43,7 @@ namespace ProjectRYPK
             }
 
             List<string> idfamil2 = SQLRequests.SelectRequest(
-           "SELECT Договор.КодДоговора FROM  Путевки2_old left join  Договор on Договор.КодПутевки = Путевки2_old.КодПутевки left join ИКлиент on ИКлиент.КодКлиента = Договор.КодКлиента",
+           "SELECT Договор.КодДоговора FROM  Путевки2_old right join  Договор on Договор.КодПутевки = Путевки2_old.КодПутевки left join ИКлиент on ИКлиент.КодКлиента = Договор.КодКлиента",
            new string[] { }, new string[] { });
             label3.Text = "Код договора" + "\n";
             for (int i = 0; i < idfamil2.Count; i++)
@@ -49,13 +53,55 @@ namespace ProjectRYPK
 
 
             List<string> idfamil3 = SQLRequests.SelectRequest(
-          "SELECT Договор.Оплата FROM  Путевки2_old left join  Договор on Договор.КодПутевки = Путевки2_old.КодПутевки left join ИКлиент on ИКлиент.КодКлиента = Договор.КодКлиента",
+          "SELECT Договор.Оплата FROM  Путевки2_old right join  Договор on Договор.КодПутевки = Путевки2_old.КодПутевки left join ИКлиент on ИКлиент.КодКлиента = Договор.КодКлиента",
           new string[] { }, new string[] { });
             label4.Text = "Оплата путевки" + "\n";
             for (int i = 0; i < idfamil3.Count; i++)
             {
                 label4.Text += idfamil3[i] + "\n";
             }
+
+
+
+
+            List<string> idfamil4 = SQLRequests.SelectRequest(
+         "SELECT Договор.КоличествоДней FROM  Путевки2_old right join  Договор on Договор.КодПутевки = Путевки2_old.КодПутевки left join ИКлиент on ИКлиент.КодКлиента = Договор.КодКлиента",
+         new string[] { }, new string[] { });
+            label5.Text = "КоличествоДней" + "\n";
+            for (int i = 0; i < idfamil4.Count; i++)
+            {
+                label5.Text += idfamil4[i] + "\n";
+            }
+
+            List<string> idfamil5 = SQLRequests.SelectRequest(
+       "SELECT Договор.ДатаЗаезда FROM  Путевки2_old right join  Договор on Договор.КодПутевки = Путевки2_old.КодПутевки left join ИКлиент on ИКлиент.КодКлиента = Договор.КодКлиента",
+       new string[] { }, new string[] { });
+            label6.Text = "ДатаЗаезда" + "\n";
+            for (int i = 0; i < idfamil5.Count; i++)
+            {
+                label6.Text += idfamil5[i] + "\n";
+            }
+
+
+            List<string> idfamil6 = SQLRequests.SelectRequest(
+       "SELECT Договор.ДатаВыезда FROM  Путевки2_old right join  Договор on Договор.КодПутевки = Путевки2_old.КодПутевки left join ИКлиент on ИКлиент.КодКлиента = Договор.КодКлиента",
+       new string[] { }, new string[] { });
+            label7.Text = "ДатаВыезда" + "\n";
+            for (int i = 0; i < idfamil6.Count; i++)
+            {
+                label7.Text += idfamil6[i] + "\n";
+            }
+
+            List<string> idfamil7 = SQLRequests.SelectRequest(
+      "SELECT Договор.ОбщаяСтоимость FROM  Путевки2_old right join  Договор on Договор.КодПутевки = Путевки2_old.КодПутевки left join ИКлиент on ИКлиент.КодКлиента = Договор.КодКлиента",
+      new string[] { }, new string[] { });
+            label8.Text = "ОбщаяСтоимость" + "\n";
+            for (int i = 0; i < idfamil7.Count; i++)
+            {
+                label8.Text += idfamil7[i] + "\n";
+            }
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -63,7 +109,9 @@ namespace ProjectRYPK
             // SELECT Имя, Фамилия, Адрес, ДанныеЗагранпаспорта 
             //    FROM Путевки, ИКлиент, Данные_клиента  WHERE 
             //    Данные_клиента.КодКлиента = ИКлиент.КодКлиентаы
-
+            label1.Text = " "; label2.Text = " "; label3.Text = " "; label4.Text = " ";
+            label5.Text = " "; label6.Text = " "; label7.Text = " "; label8.Text = " ";
+            label9.Text = " "; label10.Text = " "; label11.Text = " "; label12.Text = " "; label13.Text = " ";
 
             label1.Text = "Фамилия клиента" + "\n";
             List<string> idfamil = SQLRequests.SelectRequest(
@@ -97,7 +145,7 @@ namespace ProjectRYPK
                 label3.Text += idim2[i] + "\n";
             }
 
-            label3.Text = "Возраст " + "\n";
+            label13.Text = "Возраст " + "\n";
             List<string> idim22 = SQLRequests.SelectRequest(
             "select Возраст from Данные_клиента, ИКлиент WHERE Данные_клиента.КодКлиента  = ИКлиент.КодКлиента",
             new string[] { }, new string[] { });
@@ -173,6 +221,10 @@ namespace ProjectRYPK
 
         private void button5_Click(object sender, EventArgs e)
         {
+            label1.Text = " "; label2.Text = " "; label3.Text = " "; label4.Text = " ";
+            label5.Text = " "; label6.Text = " "; label7.Text = " "; label8.Text = " ";
+            label9.Text = " "; label10.Text = " "; label11.Text = " "; label12.Text = " "; label13.Text = " ";
+
             if (comboBox1.Text != "")
             {
 
@@ -274,7 +326,7 @@ namespace ProjectRYPK
         {
             label1.Text = " "; label2.Text = " "; label3.Text = " "; label4.Text = " ";
             label5.Text = " "; label6.Text = " "; label7.Text = " "; label8.Text = " ";
-            label9.Text = " "; label10.Text = " "; label11.Text = " "; label12.Text = " "; 
+            label9.Text = " "; label10.Text = " "; label11.Text = " "; label12.Text = " "; label13.Text = " ";
 
         }
 

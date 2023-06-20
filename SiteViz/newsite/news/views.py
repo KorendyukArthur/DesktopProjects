@@ -2,7 +2,7 @@ from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .models import Articles, Chat, ChatPrivate, UploadFile
-from .forms import ArticlesForm, ChatForm, ChatBron, ChatBronForm, ChatPrivateForm, UploadFileForm
+from .forms import ArticlesForm, ChatForm, ChatBron, ChatBronForm, ChatPrivateForm, UploadFileForm, AppProf1Form
 from django.views.generic import DetailView, UpdateView, DeleteView
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
@@ -37,6 +37,7 @@ class NewsDetailView(DetailView):
 # передача данных создание класса
 class NewsDetailView_admin(DetailView):
     model = Articles
+    success_url = '/news/'
     # шаблон который обрабатывет страницу
     template_name = 'news/deatils_view_admin.html'
     # ключ для шаблона
@@ -46,6 +47,7 @@ class NewsDetailView_admin(DetailView):
 # Обновление данных
 class NewsUpdateView(UpdateView):
     model = Articles
+    success_url = '/main_company//news_home'
     # шаблон который обнавляет страницу
     template_name = 'news/update.html'
     form_class = ArticlesForm
@@ -56,7 +58,7 @@ class NewsUpdateView(UpdateView):
 # Удаление данных
 class NewsDeleteView(DeleteView):
     model = Articles
-    success_url = '/news/'
+    success_url = '/main_company//news_home'
     # шаблон который обнавляет страницу
     template_name = 'news/delete.html'
     # ключ для шаблона
@@ -72,11 +74,11 @@ def news_home(request):
     # получение записей и их сортировка по полю даты, для получения только одной записи
     # получение одной записи
     if request.user.is_superuser:
-        news = Articles.objects.order_by('date')
+        news = Articles.objects.order_by('-date')
         # для получения данных вставляются данные третим параметром
         return render(request, 'news/news_home_admin.html', {'news': news})
     else:
-        news = Articles.objects.order_by('date')
+        news = Articles.objects.order_by('-date')
 
         # для получения данных вставляются данные третим параметром
 
@@ -84,7 +86,7 @@ def news_home(request):
 
 
 def news_home_admin(request):
-    news = Articles.objects.order_by('date')
+    news = Articles.objects.order_by('-date')
     return render(request, 'news/news_home_admin.html', {'news': news})
 
 
@@ -106,7 +108,7 @@ def create(request):
             # сохранение данных
             form.save()
             # переадресация на другую страницу
-            return redirect('home')
+            return redirect('/main_company//news_home')
         else:
             error = 'форма была неверной'
 
@@ -159,7 +161,7 @@ def create_chat(request):
             # сохранение данных
             form.save()
             # переадресация на другую страницу
-            return redirect('home')
+            return redirect('success_chat')
         else:
             error = 'форма была неверной'
 
@@ -173,11 +175,11 @@ def create_chat(request):
 
 def chat_home(request):
     if request.user.is_superuser:
-        news = Chat.objects.order_by('id')
+        news = Chat.objects.order_by('-date')
         # для получения данных вставляются данные третим параметром
         return render(request, 'news/chat_home.html', {'news': news})
     else:
-        news = Chat.objects.order_by('id')
+        news = Chat.objects.order_by('-date')
         # для получения данных вставляются данные третим параметром
         return render(request, 'news/news_home.html')
 
@@ -234,7 +236,7 @@ def create_chat_private(request):
             error = 'форма была неверной'
     s = request.user
     form = ChatPrivateForm()
-    ctp = ChatPrivate.objects.filter(user1_id = 'sadmins',user2_id = s ).order_by('date').values() | ChatPrivate.objects.filter(user1_id = s ).order_by('date').values()
+    ctp = ChatPrivate.objects.filter(user1_id = 'sadmins',user2_id = s ).order_by('-date').values() | ChatPrivate.objects.filter(user1_id = s ).order_by('-date').values()
 
     data = {
         'form': form,
@@ -276,7 +278,7 @@ def dialogchat_detail_test(request,username):
             error = 'форма была неверной'
 
 
-    obj = ChatPrivate.objects.filter(user1_id = 'sadmins', user2_id = username).order_by('date').values()| ChatPrivate.objects.filter(user2_id = 'sadmins', user1_id = username).order_by('date').values()
+    obj = ChatPrivate.objects.filter(user1_id = 'sadmins', user2_id = username).order_by('-date').values()| ChatPrivate.objects.filter(user2_id = 'sadmins', user1_id = username).order_by('-date').values()
 
     form = ChatPrivateForm()
     dt = User()
@@ -297,7 +299,7 @@ def model_form_upload(request):
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('success_upload')
     else:
         form = UploadFileForm()
     return render(request, 'news/upload_file.html', {
@@ -314,3 +316,70 @@ def view_upload_file(request):
 def download_file(request,path):
         path = open( 'rb')
 
+
+def register_prof(request):
+    error = ''
+    # получение данных из формы
+    # проверка на работу метода пост
+
+    if request.method == 'POST':
+        form = AppProf1Form(request.POST)
+
+        # метод на проверку правильности данных
+        if form.is_valid():
+            # сохранение данных
+            form.save()
+            # переадресация на другую страницу
+            return redirect('home')
+        else:
+            error = 'форма была неверной'
+
+    form = AppProf1Form()
+    data = {
+        'form': form,
+        'error': error
+    }
+
+    return render(request, 'news/register_prof.html', data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# передача данных создание класса
+class FileDetailView(DetailView):
+    model = UploadFile
+    # шаблон который обрабатывет страницу
+    template_name = 'news/file_detail.html'
+    # ключ для шаблона
+    context_object_name = 'obj'
+
+# Удаление данных
+class FileDeleteView(DeleteView):
+    model = UploadFile
+    success_url = '/success'
+    # шаблон который обнавляет страницу
+    template_name = 'news/view_file_delete.html'
+    # ключ для шаблона
+    context_object_name = 'obj'
+
+
+def success_up(request):
+    return render(request, 'news/success_up.html')
+
+
+
+def success_upload(request):
+    return render(request, 'news/success_upload.html')

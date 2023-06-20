@@ -31,7 +31,7 @@ namespace ProjectRYPK
 
             label1.Text = "1 месяц:" + "\n";
             List<string> idfamild1 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-01-01 01:00:00' and '2021-03-30 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2022-01-01 01:00:00' and '2022-03-30 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamild1.Count; i++)
@@ -42,7 +42,7 @@ namespace ProjectRYPK
 
             label2.Text = "2 месяц:" + "\n";
             List<string> idfamild2 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-02-01 01:00:00' and '2021-02-28 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2022-02-01 01:00:00' and '2022-02-28 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamild2.Count; i++)
@@ -54,7 +54,7 @@ namespace ProjectRYPK
 
             label3.Text = "3 месяц:" + "\n";
             List<string> idfamild3 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-03-01 01:00:00' and '2021-03-30 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2022-03-01 01:00:00' and '2022-03-30 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamild3.Count; i++)
@@ -65,7 +65,7 @@ namespace ProjectRYPK
 
             label4.Text = "4 месяц:" + "\n";
             List<string> idfamild4 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-04-01 01:00:00' and '2021-04-30 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2022-04-01 01:00:00' and '2022-04-30 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamild4.Count; i++)
@@ -76,7 +76,7 @@ namespace ProjectRYPK
 
             label5.Text = "5 месяц:" + "\n";
             List<string> idfamild5 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-05-01 01:00:00' and '2021-05-30 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2022-05-01 01:00:00' and '2022-05-30 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamild5.Count; i++)
@@ -87,7 +87,7 @@ namespace ProjectRYPK
 
             label6.Text = "6 месяц:" + "\n";
             List<string> idfamild6 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-06-01 01:00:00' and '2021-06-30 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2022-06-01 01:00:00' and '2022-06-30 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamild6.Count; i++)
@@ -98,7 +98,7 @@ namespace ProjectRYPK
 
             label7.Text = "7 месяц:" + "\n";
             List<string> idfamild7 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-07-01 01:00:00' and '2021-07-30 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2022-07-01 01:00:00' and '2022-07-30 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamild7.Count; i++)
@@ -109,7 +109,7 @@ namespace ProjectRYPK
 
             label8.Text = "8 месяц:" + "\n";
             List<string> idfamild8 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-08-01 01:00:00' and '2021-08-30 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2022-08-01 01:00:00' and '2022-08-30 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamild8.Count; i++)
@@ -119,7 +119,7 @@ namespace ProjectRYPK
 
             label9.Text = "9 месяц:" + "\n";
             List<string> idfamild9 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-09-01 01:00:00' and '2021-09-30 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2022-09-01 01:00:00' and '2022-09-30 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamild9.Count; i++)
@@ -130,7 +130,7 @@ namespace ProjectRYPK
 
             label10.Text = "10 месяц:" + "\n";
             List<string> idfamild10 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-10-01 01:00:00' and '2021-10-30 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2022-10-01 01:00:00' and '2022-10-30 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamild10.Count; i++)
@@ -141,7 +141,7 @@ namespace ProjectRYPK
 
             label11.Text = "11 месяц:" + "\n";
             List<string> idfamild11 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-11-01 01:00:00' and '2021-11-30 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2022-11-01 01:00:00' and '2022-11-30 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamild11.Count; i++)
@@ -152,7 +152,7 @@ namespace ProjectRYPK
 
             label12.Text = "12 месяц:" + "\n";
             List<string> idfamild12 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-12-01 01:00:00' and '2021-12-31 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2022-12-01 01:00:00' and '2022-12-31 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamild12.Count; i++)
@@ -176,7 +176,7 @@ namespace ProjectRYPK
 
             label17.Text = "1 квартал:" + "\n";
             List<string> idfamil3 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-01-01 01:00:00' and '2021-03-30 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2023-01-01 01:00:00' and '2023-03-30 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamil3.Count; i++)
@@ -187,7 +187,7 @@ namespace ProjectRYPK
 
             label18.Text = "2 квартал:" + "\n";
             List<string> idfamil4 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-03-01 01:00:00' and '2021-06-30 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2023-03-01 01:00:00' and '2021-06-30 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamil4.Count; i++)
@@ -197,7 +197,7 @@ namespace ProjectRYPK
 
             label19.Text = "3 квартал:" + "\n";
             List<string> idfamil5 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-06-01 01:00:00' and '2021-09-30 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2023-06-01 01:00:00' and '2021-09-30 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamil5.Count; i++)
@@ -208,7 +208,7 @@ namespace ProjectRYPK
 
             label20.Text = "4 квартал:" + "\n";
             List<string> idfamil6 = SQLRequests.SelectRequest(
-          "Select count (КодДоговора) From Договор where ДатаОформления between '2021-09-01 01:00:00' and '2021-12-30 01:00:00'",
+          "Select count (КодДоговора) From Договор where ДатаОформления between '2023-09-01 01:00:00' and '2021-12-30 01:00:00'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamil6.Count; i++)
@@ -488,12 +488,12 @@ namespace ProjectRYPK
 
 
 
-            label29.Text = "Статистика по оплаченным договорам" + "\n";
+            label29.Text = "Статистика по неоплаченным договорам" + "\n";
 
             int sum = 0;
             label27.Text = "Код по оплате" + "\n";
             List<string> idfamil6 = SQLRequests.SelectRequest(
-          "SELECT Договор.КодПутевки FROM  Договор WHERE Оплата = 'Оплачено'",
+          "SELECT Договор.КодКлиента FROM  Договор WHERE Оплата = 'Неоплачено'",
           new string[] { }, new string[] { });
             label28.Text = "Цена по оплате" + "\n";
             label29.Text = "Сумма долга" + "\n";
@@ -502,7 +502,7 @@ namespace ProjectRYPK
                 label27.Text += idfamil6[i] + "\n";
 
                 List<string> idfamil7 = SQLRequests.SelectRequest(
-                "Select ЦенаПутевки From Путевки2_old join Договор on Договор.КодПутевки = Путевки2_old.КодПутевки and  Путевки2_old.КодПутевки = @v1",
+                "Select ОбщаяСтоимость From Договор where  Договор.КодКлиента = @v1 and Договор.Оплата = 'Неоплачено'",
                new string[] { "v1" }, new string[] { idfamil6[i] });
                 label28.Text += idfamil7[0] + "\n";
 
@@ -533,12 +533,12 @@ namespace ProjectRYPK
 
 
 
-            label29.Text = "Статистика по неоплаченным договорам" + "\n";
+            label29.Text = "Статистика по оплаченным договорам" + "\n";
 
             int sum = 0;
             label27.Text = "Код по оплате" + "\n";
             List<string> idfamil6 = SQLRequests.SelectRequest(
-          "SELECT Договор.КодПутевки FROM  Договор WHERE Оплата = 'Неоплачено'",
+          "SELECT Договор.КодКлиента FROM  Договор WHERE Оплата = 'Оплачено'",
           new string[] { }, new string[] { });
             label28.Text = "Цена по оплате" + "\n";
             label29.Text = "Сумма долга" + "\n";
@@ -547,7 +547,7 @@ namespace ProjectRYPK
                 label27.Text += idfamil6[i] + "\n";
 
                 List<string> idfamil7 = SQLRequests.SelectRequest(
-                "Select ЦенаПутевки From Путевки2_old join Договор on Договор.КодПутевки = Путевки2_old.КодПутевки and  Путевки2_old.КодПутевки = @v1",
+                "Select ОбщаяСтоимость From Договор where  Договор.КодКлиента = @v1 and Договор.Оплата = 'Оплачено'",
                new string[] { "v1" }, new string[] { idfamil6[i] });
                 label28.Text += idfamil7[0] + "\n";
 
@@ -575,7 +575,7 @@ namespace ProjectRYPK
             int sum = 0;
 
             List<string> idfamil6 = SQLRequests.SelectRequest(
-          "SELECT Договор.КодПутевки FROM  Договор WHERE Оплата = 'Неоплачено' or Оплата = 'Оплачено'",
+          "SELECT Договор.КодКлиента FROM  Договор WHERE Оплата = 'Неоплачено' or Оплата = 'Оплачено'",
           new string[] { }, new string[] { });
 
             for (int i = 0; i < idfamil6.Count; i++)
@@ -583,7 +583,7 @@ namespace ProjectRYPK
 
 
                 List<string> idfamil7 = SQLRequests.SelectRequest(
-                "Select ЦенаПутевки From Путевки2_old join Договор on Договор.КодПутевки = Путевки2_old.КодПутевки and  Путевки2_old.КодПутевки = @v1",
+                "Select ОбщаяСтоимость FROM Договор WHERE Договор.КодКлиента = @v1",
                new string[] { "v1" }, new string[] { idfamil6[i] });
 
 

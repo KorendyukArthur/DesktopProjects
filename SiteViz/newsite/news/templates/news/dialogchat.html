@@ -8,17 +8,18 @@
 
 
 {% csrf_token %}
+<div class="features7">
+    <h1> Диалоги с пользователями</h1>
+</div>
 
- <div class="features">
-        <h1>Сообщения пользователей</h1>
+ <div class="features5">
+
         {% if users_list %}
             {% for form in users_list %}
-                <div class="alert alert-warning">
+                <div class="alert alert-light">
                     <p>
                         {{ form.username }}<br>
-                        <a href="{% url 'dialogchat_detail' form.id %}" class="btn btn-warning">Читать детальнее</a>
-
-                        <a href="{% url 'dialogchat_detail_test' form.username %}" class="btn btn-warning">Читать детальнее</a>
+                        <a href="{% url 'dialogchat_detail_test' form.username %}" class="btn btn-warning">Войти в диалог</a>
                     </p>
 
                 </div>

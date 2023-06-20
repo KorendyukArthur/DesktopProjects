@@ -37,7 +37,7 @@ namespace ProjectRYPK
             if (table.Rows.Count > 0)
             {
 
-                MessageBox.Show("Подключено к MySql");
+                MessageBox.Show("Первый этап проверки пройден");
 
 
             }
@@ -90,7 +90,7 @@ namespace ProjectRYPK
             }
             else
             {
-                MessageBox.Show("Подключено к MS SQL");
+                MessageBox.Show("Второй этап проверки пройден");
                 MF KLform = new MF();
                 this.Hide();
                 KLform.ShowDialog();

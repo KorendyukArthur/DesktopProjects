@@ -19,6 +19,7 @@ urlpatterns = [
     path('main_company/',views.main_company, name = 'main_company'),
     path('main_price/',views.main_price, name = 'main_price'),
 
-
+    path('success', views.success, name='success'),
+path('success_chat', views.success_chat, name='success_chat'),
 
 ]

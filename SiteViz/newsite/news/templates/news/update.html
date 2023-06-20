@@ -6,7 +6,7 @@
 
 {% block content %}
     <div class="features">
-        <h1>Форма для добавления статьи</h1>
+        <h1>Форма для редактирования новости</h1>
         {# для создания формы тег form #}
         {# первый атребут метод передачи данных, второй страница на которой будут обрабатываться данные из формы #}
         {# action="/news/check" #}
@@ -19,7 +19,7 @@
             {{ form.full_text }}<br>
             {{ form.date }}<br>
             <span> {{error}} </span>
-            <button class="btn btn-success" type="submit">Добавить статью</button>
+            <button class="btn btn-success" type="submit">Добавить новость</button>
         </form>
     </div>
 <div class="features">
